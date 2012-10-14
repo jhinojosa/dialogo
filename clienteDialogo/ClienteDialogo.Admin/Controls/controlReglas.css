@@ -1,0 +1,38 @@
+.controlReglas{
+    width: 100%;
+    
+}
+.textAreaContainer{
+    float:left;
+    width: 85%;
+    height: 60px;
+}
+.txtTextoRegla{
+    width: 99%;
+    height: 50px;
+    resize: none;
+}
+.botonAgregarReglaContainer{
+    text-align: center;
+    float:left;
+    width: 15%;
+    line-height: 60px;
+}
+
+.btnGuardarReglasContainer{
+    width: 100%;
+    text-align: center;
+}
+.btnGuardarReglas{
+    width: 200px;
+}
+
+.cont{
+    border:#dddddd thin solid;
+    height: 300px;
+    padding: 5px;
+}
+
+input, textarea, select{
+    border: #ff6600 thin solid;
+}

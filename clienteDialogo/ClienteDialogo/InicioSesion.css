@@ -1,0 +1,30 @@
+div#menu {
+    background-color: #DDDDDD;
+    text-align: center;
+}
+
+div#titulo_logo {
+    height: 200px;
+}
+
+div#login_form {
+    height: 300px;
+}
+
+div#botonesInicioSesion{
+    margin-right: 0px;
+    top: 25px;
+    
+}
+
+#usuario, #contrasegna{
+    display: block;
+}
+
+div.Vspace_30px {
+    height: 30px;
+}
+
+div.Vspace_10px {
+    height: 10px;
+}

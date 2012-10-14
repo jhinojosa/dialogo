@@ -1,0 +1,2 @@
+
+function Intervencion(){this.idIntervencion=0;this.Texto;this.FechaCreacion;this.TextoRespuesta;this.intervencionRespuesta;this.tipoMovida;this.correccionMovida;this.usuarioCreador;this.Notas;this.idDialogo;}

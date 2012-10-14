@@ -1,0 +1,47 @@
+table#grillaDialogBrowser, table#grillaDialogBrowser th, table#grillaDialogBrowser td {
+    border: 1px solid black;
+}
+
+div#dialogBrowser {
+    background-image: url('../Images/artz.png');
+    overflow: auto;
+    width: 100%;
+    height: 200px;
+    border: #dddddd thin solid;
+}
+
+.Boton {
+    position: relative;
+    text-align: center;
+    font-size: 11px;
+    font-weight: bold;
+    color: #005190;
+    background-color: #dddddd;
+    width: 80px;
+    z-index: 2;
+    padding: 5px;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 7px;
+    border-top-right-radius: 7px;
+}
+
+.linea {
+    position: relative;
+    border: 0px solid #ff6600;
+    z-index: 0;
+    background-color: #ff6600;
+}
+
+.vertical {
+    width: 4px;
+}
+
+.horizontal {
+    height: 4px;
+}
+
+/*Alto acoplamiento con la biblioteca jquery.tipsy.js*/
+.tipsyBgColor {
+    background-color: #005190;
+    color: #dddddd;
+}

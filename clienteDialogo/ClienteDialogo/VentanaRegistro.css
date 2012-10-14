@@ -1,0 +1,42 @@
+input.text {
+    margin-bottom: 12px;
+    width: 95%;
+    padding: .4em;
+    border-color: #FF6600;
+}
+
+div#lblMensajeError{
+    padding: 2px;
+    height: 20px;
+}
+
+fieldset label{
+    font-weight: bold;
+}
+
+
+#subirarchivo{
+    margin-top: 7px;
+    float:left;
+    margin-right: 5px;
+}
+
+#labelUpload{
+    margin-top: 22px;
+    margin-left: 120px;
+    position:absolute;
+}
+
+#ultimoArchivoSubido{
+    width: 100%;
+    height: 20px;
+    font-size: 11px;
+    text-align: right;
+}
+
+div#avatarSeleccionadoContainer {
+    float: left;
+    height: 60px;
+    width: 50px;
+}
+

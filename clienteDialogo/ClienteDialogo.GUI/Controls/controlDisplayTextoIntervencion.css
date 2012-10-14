@@ -1,0 +1,91 @@
+div.controlDisplayIntervencionContainer {
+    background-color: #dddddd;
+    height: 100%;
+    border: #005190 solid 1px;
+    z-index: 999999;
+    cursor: default;
+}
+
+div.controlDisplayIntervencionContainer .btnVerContextoContainer {
+    background-color: #005190;
+    line-height: 30px;
+    margin: 0px;
+    font-size: 11px;
+    float:left;
+    color: #ffffff;
+}
+
+div.btnVerContextoContainer button {
+    
+    margin-left: 3px;
+}
+
+div.controlDisplayIntervencionContainer .tipoMovidaContainer {
+    background-color: #005190;
+    line-height: 30px;
+    text-align: right;
+    float: right;
+    font-size: 12px;
+    color: #ffffff;
+}
+
+div.tipoMovidaContainer a {
+    background-color: white;
+    margin-right: 10px;
+}
+
+div.controlDisplayIntervencionImagenContainer {
+    height: 60px;
+    width: 50px;
+    float: left;
+}
+
+div.controlDisplayIntervenciontexto {
+    height: 60px;
+    width: 400px;
+    background-color: #ffffff;
+    border-style:inset;
+    border-color: #cccccc;
+    border-width: 2px;
+    float: right;
+    overflow: auto;
+    font-size: 12px;
+    color: #000000;
+    
+}
+
+div.controlDisplayIntervencionContexto{
+    background-color: #fbee88;
+    height: 60px;
+    visibility: visible;
+    
+    border-style:inset;
+    border-color: #cccccc;
+    border-width: 2px;
+    overflow: auto;
+    font-size: 12px;
+    color: #000000;
+    
+}
+
+div.controlDisplayIntervencionContextoOut{
+    height: 0px;
+    visibility: hidden;
+    
+}
+
+
+.btnVerContexto{
+    height: 23px;
+    
+}
+
+.controlDisplayIntervencionBotonera{
+    background-color: #dddddd;
+    line-height: 30px;
+    font-size: 11px;
+}
+
+.btnEscribirNota{
+    margin-left: 3px;
+}

@@ -1,0 +1,50 @@
+body{
+    color: #444444;
+    font-size: 13px;
+}
+div#encabezado div#imagenEncabezado {
+    float: left;
+}
+
+img#logoUsach {
+    float: right;
+}
+
+div#textoEncabezado {
+    float: left;
+    height: 113px;
+}
+
+div.encabezadoTexto_1 {
+    margin-top: 2px;
+    text-align: left;
+    font-size: 17px;
+    font-weight: bold;
+    color: #005190;/*#ff6600;*/
+}
+
+div.encabezadoTexto_2 {
+    margin-top: -4px;
+    margin-bottom: 6px;
+    text-align: left;
+    font-size: 15px;
+    font-style: italic;
+    color: #ff6600;
+}
+
+div#DatosUsuario {
+    height: 65px;
+    width: 860px;
+}
+
+div#barraBotones {
+    background-color: green;
+    margin-left: auto;
+    margin-right: auto;
+    width: 960px;
+}
+
+div#listaDialogos {
+    margin-top: 10px;
+    
+}

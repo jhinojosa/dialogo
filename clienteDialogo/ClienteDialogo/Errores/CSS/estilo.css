@@ -1,0 +1,15 @@
+#fondo {
+    text-align: center;
+}
+#alerta {
+    height: 100%;
+}
+#texto_alerta {
+    font-weight: bold;
+}
+
+#texto {
+    text-align: center;
+    font-size: 16px;
+    top: -230px;
+}

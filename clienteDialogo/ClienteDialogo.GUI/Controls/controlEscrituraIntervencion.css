@@ -1,0 +1,29 @@
+div.intervencion {
+    height: 200px;
+}
+
+.txtIntervencion {
+    height: 150px;
+    width: 100%;
+}
+
+
+div.tipoIntervencion, div.tipoIntervencion select {
+    float: left;
+    width: 200px;
+}
+
+div.lblExplicacionMovida{
+    height: 50px;
+    overflow: auto;
+}
+
+div.botonesIntervencion {
+    margin-left: 15px;
+    float: right;
+}
+div.botonesIntervencion button {
+    float: right;
+    display: inline;
+    
+}

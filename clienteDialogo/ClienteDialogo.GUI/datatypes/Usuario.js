@@ -1,0 +1,3 @@
+
+function Usuario(){this.ROL_FACILITADOR=1;this.ROL_PARTICIPANTE=0;this.ROL_ADMINISTRADOR=2;this.nombreUsuario;this.nombreCompleto;this.email;this.Password;this.Rol=0;this.imagen;}
+Usuario.prototype.esFacilitador=function(){return(this.Rol==this.ROL_FACILITADOR||Rol==ROL_ADMINISTRADOR);};Usuario.prototype.esAdministrador=function(){return(this.Rol==this.ROL_ADMINISTRADOR);};Usuario.prototype.PassWordValido=function(plainPassword){return(utils.MD5Sum.GetMd5Sum(plainPassword)==this.Password);};

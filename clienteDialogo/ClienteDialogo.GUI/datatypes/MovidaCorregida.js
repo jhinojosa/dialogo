@@ -1,0 +1,2 @@
+
+function MovidaCorregida(){this.IdMovida;this.Nombre;this.Icono;this.descripcion;this.eje;this.fechaCreacion;this.autor=new Usuario();this.idCorreccion;this.idIntervencionAsociada;this.usuarioCorrector;}

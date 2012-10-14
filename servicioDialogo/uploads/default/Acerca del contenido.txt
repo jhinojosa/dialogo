@@ -1,0 +1,4 @@
+En esta carpeta se almacenan las imágenes de avatar por defecto.
+
+la imagen debe llamarse default.jpg para que se aplique a todos los usuarios que no 
+tengan avatar definido.

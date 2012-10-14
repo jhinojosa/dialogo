@@ -1,0 +1,166 @@
+@color-site-title: 	#FFFFFF;
+@color-blue: 		#0C54AA;
+@color-orange: 		#E95B2B;
+@color-gray:		#adadad;
+@radius:			6px;
+
+body{
+	background: url("img/css/bg.png") top center repeat-y;
+}
+
+.help-block{
+	font-size: 85%;
+	color: #a6a6a6;
+}
+
+#page{
+	margin-top: 10px;
+	margin-bottom: 20px;
+	padding: 20px 20px 10px;
+	background-color: #fff;
+	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+
+	#header{
+		margin-bottom: 10px;
+		#login{
+			text-align: right;
+			#top-user{
+				float: left;
+				margin-right: 10px;
+			}
+			#top-password{
+				float:left;
+				margin-right: 10px;
+				width: 155px;
+			}
+			legend{
+				font-size:19px;
+			}
+		}
+		#user-panel{
+			text-align: right;
+			a{
+				padding-left: 10px;
+				padding-bottom: 10px;
+			}
+			#user-img,#user-options{
+				float:right;
+			}
+			#user-options{
+				padding-right: 12px;
+			}
+		}
+		#app-title h5{
+			color: @color-gray;
+		}
+	}
+
+	#menu-bar{
+		//margin-top: 10px;
+		.navbar-inner {
+			padding: 0;
+		}
+	}
+
+	#content{		
+		position:relative;
+		margin-bottom: 30px;
+
+		#barra-estado{
+			margin-bottom: 10px;
+		}
+
+		.hero-unit{
+			background-image: -webkit-linear-gradient(top, white, #F2F2F2);
+			background-image: -moz-linear-gradient(top, white, #F2F2F2);
+			background-image: -o-linear-gradient(top, white, #F2F2F2);
+			background-image: -ms-linear-gradient(top, white, #F2F2F2);
+			background-image: linear-gradient(top, white, #F2F2F2);
+			-webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.09);
+			box-shadow: 0 1px 4px rgba(0, 0, 0, 0.09);
+			color: #555;
+		}
+
+		#register-form{
+			border: solid 1px #ddd;
+			border-radius: @radius;
+			padding:15px;
+			box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+		}
+
+		#buscar-dialogo{
+			text-align: right;
+		}
+
+		table{
+			margin-top: 20px;
+			margin-bottom: 20px;
+		}
+		textarea{
+			height: 150px;
+		}
+		#dialogo-config{
+			padding-top: 30px;
+		}
+
+	}
+
+	#footer{
+		background: @color-blue url(img/css/footer-bg.jpg) no-repeat bottom left;
+		color: #EEE;
+		min-height: 100px;
+
+		h5, p{
+			//padding-top: 15px;
+			padding-left: 30px;
+		}
+		.row{
+			padding-top: 15px;
+		}
+		#usach-footer{
+
+			img{
+				padding-left: 40px;
+			}
+		}
+	}
+}
+
+#agradecimientos{
+
+	background: #A2A3AB;
+	background-image: url(img/css/noise.png),-webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #A7AAB0), color-stop(100%, #9B9CA4));
+	background-image: url(img/css/noise.png),-webkit-linear-gradient(#A7AAB0,#9B9CA4);
+	background-image: url(img/css/noise.png),-moz-linear-gradient(#A7AAB0,#9B9CA4);
+	background-image: url(img/css/noise.png),-o-linear-gradient(#A7AAB0,#9B9CA4);
+	background-image: url(img/css/noise.png),-ms-linear-gradient(#A7AAB0,#9B9CA4);
+	background-image: url(img/css/noise.png),linear-gradient(#A7AAB0,#9B9CA4);
+	-webkit-box-shadow: inset 0 8px 8px -8px rgba(0, 0, 0, 0.6);
+	-moz-box-shadow: inset 0 8px 8px -8px rgba(0,0,0,0.6);
+	box-shadow: inset 0 8px 8px -8px rgba(0, 0, 0, 0.6);
+	background-repeat: repeat-x,repeat;
+	background-position: top,0% 0%;
+	color: #3F4042;
+	font-size: 13px;
+	padding: 20px 20px 16px;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+
+	text-align: center;
+
+	a{
+		color: #666;
+	}
+
+}
+
+#ayuda-index.affix{
+	top: 40px;
+	width: 300px;
+}
+
+#ayuda-index.affix-bottom{
+	width: 300px;
+	position: absolute;
+	top: auto;
+	bottom: 500px;
+}

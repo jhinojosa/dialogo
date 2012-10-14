@@ -1,0 +1,19 @@
+
+$(function(){$("#btnNuevoDialogo").button({icons:{primary:'ui-icon-plusthick'}});$("#btnVerMarcadores").button({icons:{primary:'ui-icon-star'}});$("#btnBuscarIntervenciones").button({icons:{primary:'ui-icon-search'}});$("#btnVerAlertas").button({icons:{primary:'ui-icon-alert'}});$("#btnRefrescar").button({icons:{primary:'ui-icon-refresh'}});{var usuario=JSON.parse($("#usuarioM").val());var idsesion=JSON.parse($("#idsesion").val());_ventanaPrincipal=new VentanaPrincipal(usuario,idsesion);}});function VentanaPrincipal(usuario,idSesion){my=this;this.sesionActual=new Sesion();try{controller=new CSesion();this.sesionActual=controller.obtenerSesion(usuario,idSesion);SesionActual=this.sesionActual;_controlador=new CDialogo(this.sesionActual);var controlDatosUsuario=new DatosUsuario();controlDatosUsuario.setUsuario(this.sesionActual.usuario);controlListaDialogos=new controlListaDialogos();this.actualizarListaDialogos(this.sesionActual);this.InitializeComponents();if(_controlador.hayDialogosDesbalanceados()){}else{$("#btnVerAlertas").hide();}}catch(ex){}
+vNuevoDialogo=new Array();vDialogo=new Array();document.title="Sistema para el diálogo remoto - "+this.sesionActual.usuario.nombreCompleto;}
+window.setInterval(function update(){my.actualizarListaDialogos();},30000);window.onbeforeunload=function(){try{vAlertas.close();}catch(ex){}
+try{vBusqueda.close();}catch(ex){}
+try{vMarcadores.close();}catch(ex){}
+try{for(var i=0;i<vNuevoDialogo.length;i++){vNuevoDialogo[i].close();}}catch(ex){}
+try{for(i=0;i<vDialogo.length;i++){vDialogo[i].close();}}catch(ex){}}
+VentanaPrincipal.prototype.InitializeComponents=function(){$("#btnRefrescar").prop("title","Recargar la lista de diálogos");$("#btnRefrescar").click(function(){my.btnRefresh_Click();});$("#btnNuevoDialogo").click(function(){my.btnNuevoDialogo_Click(this);});$("#btnVerMarcadores").click(function(){my.btnVerMarcadores_Click(this);});$("#btnBuscarIntervenciones").click(function(){my.btnBuscarIntervenciones_Click(this);});$("#btnVerAlertas").click(function(){my.btnVerAlertas_Click(this);});}
+VentanaPrincipal.prototype.btnVerAlertas_Click=function(sender){var sesion=JSON.stringify(my.sesionActual);vAlertas=window.open("VentanaAlertas.php?sesionactual="+sesion,"vAlertas");vAlertas.focus();}
+VentanaPrincipal.prototype.btnBuscarIntervenciones_Click=function(sender){var sesion=JSON.stringify(my.sesionActual);vBusqueda=window.open("VentanaBusqueda.php?sesionactual="+sesion,"vBusqueda");vBusqueda.focus();}
+VentanaPrincipal.prototype.btnVerMarcadores_Click=function(sender){var sesion=JSON.stringify(my.sesionActual);vMarcadores=window.open("VentanaMarcadores.php?sesionactual="+sesion,"vMarcadores");vMarcadores.focus();}
+VentanaPrincipal.prototype.btnNuevoDialogo_Click=function(sender){var sesion=JSON.stringify(my.sesionActual);var vND=window.open("VentanaNuevoDialogo.php","vNuevoDialogo"+Math.random());vND.focus();vNuevoDialogo.push(vND);}
+VentanaPrincipal.prototype.btnRefresh_Click=function(sender){my.actualizarListaDialogos(my.sesionActual);}
+VentanaPrincipal.prototype.actualizarListaDialogos=function(sesionActual){$("body").css("cursor","wait");try{var _err="";var _encabezados=_controlador.listarDialogos(this.sesionActual,1,_err);if(_encabezados[0].length>0)
+controlListaDialogos.setDialogos(_encabezados[0]);else
+if(_encabezados[1]!=""){}}catch(ex){$("body").css("cursor","default");notificar("Error al obtener los datos desde el servidor");}
+$("body").css("cursor","default");}
+function seleccionarDialogo_Executed(){if(arguments[0].target.className=="boton"){var dataTr=oTable.fnGetData(this);var vD=window.open("VentanaDialogo.php?sesionActual="+JSON.stringify(SesionActual)+"&idDialogo="+dataTr[0]+"&idIntervencion=","vDialogo"+Math.random());vD.focus();vDialogo.push(vD);}}

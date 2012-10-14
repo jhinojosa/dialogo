@@ -1,0 +1,47 @@
+/* 
+    Document   : instalacion
+    Created on : 04-07-2012, 09:45:14 PM
+    Author     : Cristian Chávez
+    Description:
+        Purpose of the stylesheet follows.
+*/
+body{
+    background-color: #005190;
+    color: white;
+}
+
+div.form{
+    margin-top: 20px;
+}
+div.boton{
+    text-align: center;
+}
+div.row{
+    padding-top: 25px;
+}
+
+.row input{
+    width: 100%;
+}
+div.row.botones{
+    padding-top: 40px;
+}
+
+div.mensaje{
+    padding-top: 10px;
+    font-weight: bold;
+    font-style: italic;
+    text-align: center;
+    
+}
+
+div.campo{
+   font-weight: bold;
+    
+}
+
+.titulo{
+    margin-top: 20px;
+    font-size: 30px;
+    text-align: center;
+}

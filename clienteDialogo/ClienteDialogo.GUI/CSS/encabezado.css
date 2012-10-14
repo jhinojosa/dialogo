@@ -1,0 +1,40 @@
+div#imagenEncabezado {
+    float: left;
+}
+
+div#imagenEncabezado #logoUsach {
+    float: right;
+}
+
+div#textoEncabezado {
+    float: left;
+    height: 113px;
+}
+
+div#textoEncabezado div.encabezadoTexto_1 {
+    margin-top: 2px;
+    text-align: left;
+    font-size: 17px;
+    font-weight: bold;
+    color: #005190;/*#ff6600;*/
+}
+
+div#textoEncabezado div.encabezadoTexto_2 {
+    margin-top: -4px;
+    margin-bottom: 6px;
+    text-align: left;
+    font-size: 15px;
+    font-style: italic;
+    color: #ff6600;
+}
+
+div#tituloPaginaActual{
+    text-align: left;
+    color: #005190;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 40px;
+    margin-top: -50px;
+    margin-left: 115px;
+}
+

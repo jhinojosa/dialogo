@@ -1,0 +1,68 @@
+body{
+    color:#444444;
+    font-size: 13px;
+}
+div#tituloNuevoDialogo {
+    float: left;
+}
+
+div#configNuevoDialogo {//
+    background-color: #FFCACA;
+}
+
+div#configNuevoDialogo div {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+div#configNuevoDialogo div.dataConfig {//
+    background-color: green;
+    color: #005190;
+    font-style: italic;
+    font-weight: bold;
+    /*border-width: thin;
+     border-color: #ddd;
+     border-style: solid;*/
+}
+
+div#cambiarConfig {//
+    background-color: #0D3349;
+    padding: 0;
+    font-size: 12px;
+    line-height: 60px;
+    text-align: center;
+}
+
+div#lblMensajeError {
+    
+}
+
+#txtTitulo{
+    border: #ff6600 thin solid;
+}
+
+div#lblMensajeError div p{
+    margin-top: 8px;
+    font-weight: bold;
+    font-style: italic;
+}
+
+div#publicar {
+    text-align: center;
+    line-height: 50px;
+}
+
+input, label {
+    display: block;
+}
+
+div#publicar button{
+    width: 100%;
+}
+
+
+.cmbTipoIntervencion{
+    width: 200px;
+}
+
+/*Esto es parte de un control*/

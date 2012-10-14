@@ -1,0 +1,100 @@
+
+#tab1 #encabezadoTab1 {
+    right: 20px;
+}
+
+div#imagenUsuario {
+    margin-left: 9px;
+}
+div#imagenUsuario img {
+   
+    width: 50px;
+}
+
+div#datos {
+    left: -100px;
+}
+
+div#datos .data {
+    font-weight: bold;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+#btnVerEstadisticas {
+    margin-top: 10px;
+    margin-left: 9px;
+}
+
+div#btnsRefPar {
+    text-align: right;
+    margin-right: 17px;
+    margin-bottom: 10px;
+}
+
+div#txtArea {
+    height: 179px;
+    width: 900px;
+}
+
+div#txtArea textarea {
+    width: 100%;
+    height: 150px;
+}
+
+div.intervencion textarea {
+    width: 100%;
+}
+
+
+#btnGuardarActa {
+    margin-top: 20px;
+    float: right;
+}
+
+#btnVerTodasActas {
+    margin-left:0px;
+    margin-top: 20px;
+    float: left;
+}
+
+div#cntndrActaOtroUsuario {
+    width: 900px;
+}
+
+#txtActaOtroUsuario {
+    width: 100%;
+    height: 250px;
+    overflow: auto;
+    border: #ff6600 thin solid;
+    text-wrap: normal;
+    background-color: #efefef;
+}
+
+div#lblActa {
+    margin-top: 20px;
+}
+
+
+div#Navegador {
+    overflow: scroll;
+    width: 100%;
+    height: 300px;
+    border: #dddddd solid 1px;
+}
+
+div.nodo {
+
+    background-color: #ddd;
+    border: #aaa solid 1px;
+}
+
+div#btnRefrescarContainer{
+    width: 100%;
+    padding: 5px;
+    text-align: right;
+}
+
+#cmbUsuarios{
+    width: 180px;
+}

@@ -1,0 +1,4 @@
+
+$(function(){$("#tabs").tabs({disabled:[1]});{var sesion=JSON.parse($("#sesion").val());vAlertas=new VentanaAlertas(sesion);vAlertas.cargarDesbalance();}});function VentanaAlertas(sesion){me=this;this.sesionActual=sesion;SesionActual=this.sesionActual;this.listaDialogos=new controlListaDialogos();document.title="Ver alertas";}
+VentanaAlertas.prototype.cargarDesbalance=function(){try{var _controlador=new CDialogo(me.sesionActual);var _desb=_controlador.obtenerDialogosDesbalanceados();me.listaDialogos.setDialogos(_desb);}catch(ex){alert(ex);}}
+function seleccionarDialogo_Executed(){if(arguments[0].target.className=="boton"){var dataTr=oTable.fnGetData(this);var vD=window.open("VentanaDialogo.php?sesionActual="+JSON.stringify(SesionActual)+"&idDialogo="+dataTr[0]+"&idIntervencion=",'_blank');vD.focus();try{opener.vDialogo.push(vD);}catch(ex){}}}

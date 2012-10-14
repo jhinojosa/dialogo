@@ -1,0 +1,83 @@
+.tableContainer {
+    width: 910px;
+}
+
+.gridTitle{
+    //font-size: 13px;
+}
+
+.edit{
+        
+}
+
+
+div#lblMensajeError {
+
+    height: 50px;
+/*    background-color: #ddd;*/
+}
+
+div#cntndrBotones {
+    margin-top: 10px;
+    text-align: right;
+    right: 40px;
+}
+
+div#cntndrCmbPerfiles {
+    left: -10px;
+}
+
+div#cntndrCmbReglasPredefinidas {
+    left: -10px;
+}
+
+div#facilitador {
+    /* border-style: solid;
+     border-width: thin;
+     border-color: black;*/
+    top: 10px;
+    margin: 0px;
+    height: 50px;
+    left: 0px;
+}
+
+#btnCambiar {
+    /* border-style: solid;
+     border-width: thin;
+     border-color: black;*/
+    text-align: left;
+    margin: 0px;
+    left: 4px;
+    top: 11px;
+}
+
+div#agregar {
+    /* border-style: solid;
+     border-width: thin;
+     border-color: black;*/
+    top: -15px;
+    height: 50px;
+    margin: 0px;
+    right: 50px;
+    text-align: right;
+    float:right;
+}
+#btnGuardar {
+    margin-top: 10px;
+    float: right;
+}
+
+label, select {
+    display: block;
+    width: 300px;
+}
+
+td.edit input{
+    
+}
+
+#lblDescripcion{
+    width: 580px;
+    height:  50px;
+    font-style: italic;
+}

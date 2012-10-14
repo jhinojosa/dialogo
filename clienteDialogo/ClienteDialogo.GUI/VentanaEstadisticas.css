@@ -1,0 +1,7 @@
+.dataTables_info{
+    visibility: hidden;
+}
+
+#tab2{
+    overflow:auto;
+}

@@ -1,0 +1,65 @@
+.grillaContainer{
+    width: 60%;
+    float: left;
+}
+
+.contMovidas{
+    border:#dddddd thin solid;
+    height: 390px;
+    padding: 5px;
+}
+
+.inputContainer{
+    width: 38%;
+    height: 217px;
+    float:left;
+    margin-left: 2%;
+}
+
+.inputText{
+    margin-top: 5px;
+    font-size: 12px;
+}
+.formContainer{
+    margin-top: 10px;
+}
+
+.formInput{
+    width: 99%;
+}
+
+.formTextarea{
+    width: 99%;
+    height: 60px;
+    resize: none;
+}
+
+.formContainer button{
+    margin-left: 5px;
+    
+}
+
+.btnAdd{
+    margin-top: 6px;
+    float:right;
+}
+
+
+.btnUpdateMov{
+    margin-top: 6px;
+    float:left;
+}
+
+.btnGuardarMovidasContainer{
+    width: 100%;
+    text-align: center;
+}
+.btnGuardarMovidas{
+    width: 200px;
+}
+
+#movidaCreacionSetupContainer{
+    margin-top: 20px;
+    border:#dddddd thin solid;
+    padding: 5px;
+}

@@ -1,0 +1,2 @@
+
+function Dialogo(){this.idDialogo="";this.usuarioCreador="";this.usuarioFacilitador="";this.Titulo="";this.FechaCreacion="";this.FechaUltimaIntervencion="";this.Reglas=new Array();this.ActaUsuario=new Acta();this.balanceDialogo=new Array();this.intervenciones=new Array();this.categoria="";this.usuariosPermitidos=new Array();this.estaDialogoDesbalanceado="";}
