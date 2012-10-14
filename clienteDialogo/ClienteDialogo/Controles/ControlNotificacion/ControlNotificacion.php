@@ -1,8 +1,4 @@
-<!--<div id="background">
-    
-</div>-->
-<div id="notificar" class="ui-corner-all">
-    <div id="mensaje">
-        Este es el mensaje
-    </div>
+
+<div id="notificar" class="alert alert-error">
+  <strong>oh! Error!</strong> <span id="mensaje">Change a few things up and try submitting again.</span>
 </div>

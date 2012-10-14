@@ -140,7 +140,8 @@ function NavegadorHilo(){
         ret+="<select class=\"cmbTipoMovidas\" id=\"cmbTipoMovidas_"+param.idIntervencion+"\" style=\" width: 130px; float:right; margin-top:5px;\"><select>"+
         "</div>"+
         "</div>";
-    
+//        var p = $("#cmbTipoMovidas_" + param.idIntervencion);
+//        $("#cmbTipoMovidas_" + param.idIntervencion +"option[value="+ param.tipoMovida.Nombre+"]").attr("selected",true);
         //var ret ="<div style=\"width:550px; height: 120px; background-color:orange;\"></div>";
     
         return ret;

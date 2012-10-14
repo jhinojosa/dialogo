@@ -20,7 +20,8 @@ div.btnVerContextoContainer button {
     margin-left: 3px;
 }
 
-div.controlDisplayIntervencionContainer .tipoMovidaContainer {
+
+div.controlDisplayIntervencionContainer .tipoMovidaContainer{
     background-color: #005190;
     line-height: 30px;
     text-align: right;
@@ -29,10 +30,9 @@ div.controlDisplayIntervencionContainer .tipoMovidaContainer {
     color: #ffffff;
 }
 
-div.tipoMovidaContainer a {
-    background-color: white;
-    margin-right: 10px;
-}
+
+
+
 
 div.controlDisplayIntervencionImagenContainer {
     height: 60px;

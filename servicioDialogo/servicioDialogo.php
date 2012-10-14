@@ -41,8 +41,8 @@ require_once("servicioDialogo.Negocio/BCArchivo.php");
 require_once("servicioDialogo.Negocio/sesion/BC_Sesion.php");
 require_once("servicioDialogo.Datos/sesion/Sesion.php");
 require_once("servicioDialogo.Datos/Usuario.php");
-require_once 'servicioDialogo.Datos/Nota.php';
-require_once 'servicioDialogo.Negocio/BCAdministracion.php';
+require_once('servicioDialogo.Datos/Nota.php');
+require_once('servicioDialogo.Negocio/BCAdministracion.php');
 
 
 
