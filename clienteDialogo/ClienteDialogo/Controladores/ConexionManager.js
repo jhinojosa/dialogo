@@ -13,7 +13,7 @@ function ConexionManager(){
 //    this.localurl = "http://127.0.0.1/servicioDialogo/servicioDialogo.php";
 
    
-    this.url = "http://" + document.domain + ":8080/dialogo" +  "/servicioDialogo/servicioDialogo.php";
+    this.url = "http://" + document.domain + "/dialogo" +  "/servicioDialogo/servicioDialogo.php";
     
     //    this.url = "http://dialogo/servicioDialogo/servicioDialogo.php";
     //Arreglo de parámetros.

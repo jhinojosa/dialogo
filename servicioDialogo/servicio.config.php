@@ -24,5 +24,5 @@ $default_user_image = "uploads/default/default.jpg";
  */
 $from_page_location = "../../servicioDialogo/";
 
-$pagina_login = "http://127.0.0.1:8080/dialogo/";
+$pagina_login = "http://127.0.0.1/dialogo/";
 ?>
