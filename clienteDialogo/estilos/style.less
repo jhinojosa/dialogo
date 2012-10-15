@@ -5,21 +5,7 @@
 @radius:			6px;
 
 body{
-	//background: url("img/css/bg.png") top center repeat-y;
-background-image: linear-gradient(bottom, rgb(255,255,255) 19%, rgb(90,167,250) 52%, rgb(255,255,255) 80%);
-background-image: -o-linear-gradient(bottom, rgb(255,255,255) 19%, rgb(90,167,250) 52%, rgb(255,255,255) 80%);
-background-image: -moz-linear-gradient(bottom, rgb(255,255,255) 19%, rgb(90,167,250) 52%, rgb(255,255,255) 80%);
-background-image: -webkit-linear-gradient(bottom, rgb(255,255,255) 19%, rgb(90,167,250) 52%, rgb(255,255,255) 80%);
-background-image: -ms-linear-gradient(bottom, rgb(255,255,255) 19%, rgb(90,167,250) 52%, rgb(255,255,255) 80%);
-
-background-image: -webkit-gradient(
-	linear,
-	left bottom,
-	left top,
-	color-stop(0.19, rgb(255,255,255)),
-	color-stop(0.52, rgb(90,167,250)),
-	color-stop(0.8, rgb(255,255,255))
-);
+	background: url("img/css/bg.png") top center repeat-y;
 }
 
 .help-block{
@@ -29,21 +15,15 @@ background-image: -webkit-gradient(
 
 #page{
 	margin-top: 10px;
-	margin-bottom: 30px;
+	margin-bottom: 20px;
 	padding: 20px 20px 10px;
-	background: #fff;
-	//box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+	background-color: #fff;
+	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+
 	#header{
-		height: 120px;
 		margin-bottom: 10px;
 		#login{
-			//padding-top: 40px;
-			//padding-left: 25px;
 			text-align: right;
-
-			legend{
-				font-size: 17px;
-			}
 			#top-user{
 				float: left;
 				margin-right: 10px;
@@ -52,13 +32,10 @@ background-image: -webkit-gradient(
 				float:left;
 				margin-right: 10px;
 				width: 155px;
-				.input-prepend{
-					padding-bottom: 5px;
-				}
 			}
-		}
-		.modal{
-			text-align: left;
+			legend{
+				font-size:19px;
+			}
 		}
 		#user-panel{
 			text-align: right;
@@ -66,8 +43,14 @@ background-image: -webkit-gradient(
 				padding-left: 10px;
 				padding-bottom: 10px;
 			}
+			#user-img,#user-options{
+				float:right;
+			}
+			#user-options{
+				padding-right: 12px;
+			}
 		}
-		.app-title h5{
+		#app-title h5{
 			color: @color-gray;
 		}
 	}
@@ -77,8 +60,13 @@ background-image: -webkit-gradient(
 	}
 
 	#content{		
-		min-height: 100px;
-		padding: 0px 0px 20px;
+		//min-height: 400px;
+		margin-bottom: 30px;
+
+		#barra-estado{
+			margin-bottom: 10px;
+		}
+
 		.hero-unit{
 			background-image: -webkit-linear-gradient(top, white, #F2F2F2);
 			background-image: -moz-linear-gradient(top, white, #F2F2F2);
@@ -100,6 +88,8 @@ background-image: -webkit-gradient(
 		#buscar-dialogo{
 			text-align: right;
 		}
+
+
 	}
 
 	#footer{
@@ -126,12 +116,12 @@ background-image: -webkit-gradient(
 #agradecimientos{
 
 	background: #A2A3AB;
-	background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAABCAMAAADKFy/CAAAABlBMVEX///////9VfPVsAAAAAnRSTlP/AOW3MEoAAAANSURBVAjXY2BgYAQCAAARAAVwgCxyAAAAAElFTkSuQmCC'),url(img/css/noise.png),-webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #A7AAB0), color-stop(100%, #9B9CA4));
-	background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAABCAMAAADKFy/CAAAABlBMVEX///////9VfPVsAAAAAnRSTlP/AOW3MEoAAAANSURBVAjXY2BgYAQCAAARAAVwgCxyAAAAAElFTkSuQmCC'),url(img/css/noise.png),-webkit-linear-gradient(#A7AAB0,#9B9CA4);
-	background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAABCAMAAADKFy/CAAAABlBMVEX///////9VfPVsAAAAAnRSTlP/AOW3MEoAAAANSURBVAjXY2BgYAQCAAARAAVwgCxyAAAAAElFTkSuQmCC'),url(img/css/noise.png),-moz-linear-gradient(#A7AAB0,#9B9CA4);
-	background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAABCAMAAADKFy/CAAAABlBMVEX///////9VfPVsAAAAAnRSTlP/AOW3MEoAAAANSURBVAjXY2BgYAQCAAARAAVwgCxyAAAAAElFTkSuQmCC'),url(img/css/noise.png),-o-linear-gradient(#A7AAB0,#9B9CA4);
-	background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAABCAMAAADKFy/CAAAABlBMVEX///////9VfPVsAAAAAnRSTlP/AOW3MEoAAAANSURBVAjXY2BgYAQCAAARAAVwgCxyAAAAAElFTkSuQmCC'),url(img/css/noise.png),-ms-linear-gradient(#A7AAB0,#9B9CA4);
-	background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAABCAMAAADKFy/CAAAABlBMVEX///////9VfPVsAAAAAnRSTlP/AOW3MEoAAAANSURBVAjXY2BgYAQCAAARAAVwgCxyAAAAAElFTkSuQmCC'),url(img/css/noise.png),linear-gradient(#A7AAB0,#9B9CA4);
+	background-image: url(img/css/noise.png),-webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #A7AAB0), color-stop(100%, #9B9CA4));
+	background-image: url(img/css/noise.png),-webkit-linear-gradient(#A7AAB0,#9B9CA4);
+	background-image: url(img/css/noise.png),-moz-linear-gradient(#A7AAB0,#9B9CA4);
+	background-image: url(img/css/noise.png),-o-linear-gradient(#A7AAB0,#9B9CA4);
+	background-image: url(img/css/noise.png),-ms-linear-gradient(#A7AAB0,#9B9CA4);
+	background-image: url(img/css/noise.png),linear-gradient(#A7AAB0,#9B9CA4);
 	-webkit-box-shadow: inset 0 8px 8px -8px rgba(0, 0, 0, 0.6);
 	-moz-box-shadow: inset 0 8px 8px -8px rgba(0,0,0,0.6);
 	box-shadow: inset 0 8px 8px -8px rgba(0, 0, 0, 0.6);
@@ -143,5 +133,9 @@ background-image: -webkit-gradient(
 	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
 
 	text-align: center;
+
+	a{
+		color: #666;
+	}
 
 }
