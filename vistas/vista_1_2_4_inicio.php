@@ -97,17 +97,7 @@
                                 <div class="controls">
                                     <input type="text" placeholder="ej: jperez">
                                     <span class="help-block">Ingrese el nombre de usuario del cual desea recuperar la contraseña</span>
-				    <span class="help-block">ó</span>
                                 </div>
-                            </div>
-			    <div class="control-group">
-                                <label for="" class="control-label">Ingrese dirección de correo electrónico  <i class="icon-user"></i></label>
-                                <div class="controls">
-                                    <input type="text" placeholder="ej: jperez@helloworld.com">
-                                    <span class="help-block">Ingrese la dirección de correo electrónico del usuario del cual desea recuperar la contraseña</span>				
-                                </div>
-				<p></p>
-				<p># Le será enviado un mail con las instrucciones para recuperar la contraseña</p>
                             </div>
                         </form>    
                     </div>
@@ -131,7 +121,6 @@
                         </ul>
                         <ul class="nav pull-right">
                             <li><a href="#"><i class="icon-question-sign"></i> Ayuda</a></li>
-                            <li><a href="#">Acerca de</a></li>
                         </ul>
                     </div>
                 </div>    

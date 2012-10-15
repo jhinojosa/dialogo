@@ -1,39 +1,23 @@
 <?php include_once('header.php'); ?>
-<div id="menu-bar" class="row">
-    <div class="span12">
-        <div class="navbar">
-            <div class="navbar-inner">
-                <ul class="nav">
-                    <li ><a href="#"><i class="icon-home"></i> Portada</a></li>
-                    <li class="active" ><a href="#"><i class="icon-comment"></i> Diálogos</a></li>
-                    <li ><a href="#"><i class="icon-star"></i> Marcadores</a></li>
-                    <li ><a href="#"><i class="icon-eye-open"></i> Intervenciones</a></li>
-                </ul>
-                <ul class="nav pull-right">
-                    <li><a href="#"><i class="icon-question-sign"></i> Ayuda</a></li>
-                    <li><a href="#"><i class="icon-info-sign"></i> Acerca de</a></li>
-                </ul>
-            </div>
-        </div>    
-    </div>  
-</div><!-- #menu-bar -->
 
-<div id="barra-estado" class="row">
-    <div class="span12">
-        <ul class="breadcrumb">
-          <li><a href="#"><i class="icon-home"></i> Portada</a> <span class="divider">/</span></li>
-	        <li><a href="#">Diálogos</a> <span class="divider">/</span></li>
-          <li><a href="#">Dialogando</a> <span class="divider">/</span></li>
-          <li class="active">Estádisticas</li>
-        </ul>
-    </div> <!-- #barra-estado -->
-</div>
 
-<div class="row" id="content">
+        <div id="barra-estado" class="row">
+          <div class="span12">
+            <ul class="breadcrumb">
+              <li><a href="#"><i class="icon-home"></i> Portada</a> <span class="divider">/</span></li>
+	      <li><a href="#">Diálogos Disponibles </a> <span class="divider">/</span></li>
+              <li><a href="#">Dialogando</a> <span class="divider">/</span></li>
+              <li class="active">Estádisticas</li>
+            </ul>
+          </div> <!-- #barra-estado -->
+        </div>
 
+        <div class="row" id="content">
+          
+        </div><!-- #content -->
 	<div id="main-content" class="span12">
 
-	  <h3>Estadísticas</h3>
+	  <h1>Estadísticas</h1>
 	  <!--Inicio de las pestañas-->
                
             <div class="tabbable">
@@ -42,15 +26,15 @@
                		<li><a href="#2" data-toggle="tab">Participación Usuario/Movida</a></li>
                		<li><a href="#3" data-toggle="tab">Participación Usuario/Eje</a></li>
             	</ul>
-		          <!--Contenido de las pestañas-->
+		<!--Contenido de las pestañas-->
             	<div class="tab-content">
-			       <!--Pestaña Perfiles de Movida-->
-		               <div class="tab-pane active" id="1">
-				                <h3>Balance de Tipos de Movida</h3>
+			<!--Pestaña Perfiles de Movida-->
+			<div class="tab-pane active" id="1">
+				<h3>Balance de Tipos de Movida</h3>
                			
-          			        <!--TABLA --> 
+          			<!--TABLA --> 
 
-        			     <table class="table table-striped table-bordered">
+            			<table class="table table-striped table-bordered">
                   			<thead>
                     				<tr>
                       					<th>Movida</th>
@@ -127,9 +111,12 @@
 						  
                   			</tbody>
                 		</table>
+				
 			</div>
-             	</div>                            
+             	</div>
+				<a class="btn btn-small pull-right" href="ventana_dialogo.php">Volver</a>
+                            
             </div>
         </div><!-- #main-content -->
-</div><!-- content -->
+
 <?php include_once('footer.php'); ?>

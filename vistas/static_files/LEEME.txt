@@ -1,0 +1,2 @@
+Esta carpeta contiene los estilos e imágenes necesarias para desplegar
+las pantallas "forbidden" y "not found"

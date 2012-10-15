@@ -1,36 +1,17 @@
 <?php include_once('header.php'); ?>
-<div id="menu-bar" class="row">
-    <div class="span12">
-        <div class="navbar">
-            <div class="navbar-inner">
-                <ul class="nav">
-                    <li ><a href="#"><i class="icon-home"></i> Portada</a></li>
-                    <li class="active" ><a href="#"><i class="icon-comment"></i> Nuevo Diálogo</a></li>
-                    <li ><a href="#"><i class="icon-star"></i> Marcadores</a></li>
-                    <li ><a href="#"><i class="icon-eye-open"></i> Intervenciones</a></li>
-                </ul>
-                <ul class="nav pull-right">
-                    <li><a href="#"><i class="icon-question-sign"></i> Ayuda</a></li>
-                    <li><a href="#"><i class="icon-info-sign"></i> Acerca de</a></li>
-                </ul>
-            </div>
-        </div>    
-    </div>  
-</div><!-- #menu-bar -->
-
 <div id="barra-estado" class="row">
-    <div class="span12">
-        <ul class="breadcrumb">
-	           <li><a href="#"><i class="icon-home"></i> Portada</a> <span class="divider">/</span></li>
-	           <li><a href="#">Diálogos</a> <span class="divider">/</span></li>
-             <li><a href="#">Nuevo Diálogo</a> <span class="divider">/</span></li>
-        	   <li class="active">Configuración Diálogo</li>
-        </ul>
-    </div> <!-- #barra-estado -->
-</div>
+          <div class="span12">
+            <ul class="breadcrumb">
+              <li><a href="#"><i class="icon-home"></i> Portada</a> <span class="divider">/</span></li>
+		<li><a href="#">Nuevo Diálogo</a> <span class="divider">/</span></li>
+              <li class="active">Configuración Diálogo</li>
+            </ul>
+          </div> <!-- #barra-estado -->
+        </div>
 
-<div class="row" id="content">
-
+        <div class="row" id="content">
+          
+        </div><!-- #content -->
 	<div id="main-content" class="span12">
 
 	  <h1>Configuración de Diálogo</h1>
@@ -92,22 +73,13 @@
 				<table class="table table-striped table-bordered">
                   			<thead>
                     				<tr>
-                      					<th width="85%">Regla</th>
-                                <th width="15%"> </th>
+                      					<th>Regla</th>
                     				</tr>
                   			</thead>
                   			<tbody>
-                    				<tr>
-                      					<td><a href="#">Reglar 1</a></td>
-                                <td><button class="btn btn-block btn-small btn-danger"> Eliminar</button></td>
+                    				<tr class="error">
+                      					<td>No hay reglas disponibles</td>
                     				</tr>
-                            <tr>
-                                <td><a href="#">Reglar 2</a></td>
-                                <td><button class="btn btn-block btn-small btn-danger"> Eliminar</button></td>
-                            </tr>
-                            <tr>
-                                <td><a href="#">Reglar 3</a></td>
-                                <td><button class="btn btn-block btn-small btn-danger"> Eliminar</button></td>
                  		 	</tbody>
 					<!--En caso de haber reglas se debe revizar escribir las reglas pertinentes con un arreglo-->
                			 </table>
@@ -152,11 +124,11 @@
 			</div>
              	</div>
 			
-         	<button class="btn btn-small btn-primary "> Guardar Configuración</button>
-			<a class="btn btn-small " href="nuevo_dialogo.php"> Cancelar</a>
+         	<button class="btn btn-small pull-right"> Guardar Configuración</button>
+			<a class="btn btn-small pull-right" href="nuevo_dialogo.php"> Cancelar</a>
                             
             </div>
 
         </div><!-- #main-content -->
-</div><!-- #content -->
+
 <?php include_once('footer.php'); ?>
