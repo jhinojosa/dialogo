@@ -2,3 +2,14 @@ clienteDialogo/ClienteDialogo.Admin/Controladores/ConexionManager.js
 clienteDialogo/ClienteDialogo.GUI/Controladores/ConexionManager.js
 clienteDialogo/ClienteDialogo/Controladores/ConexionManager.js
 servicioDialogo/servicio.config.php
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db
