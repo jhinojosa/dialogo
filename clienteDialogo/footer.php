@@ -9,7 +9,7 @@
                         Segundo Semestre de 2012</p>
                     </div>
                     <div id="usach-footer" class="span2">
-                        <a href="http://www.usach.cl/"><img src="img/html/usach-white.png" alt="" /></a>
+                        <a href="http://www.usach.cl/"><img src="../estilos/img/html/usach-white.png" alt="" /></a>
                     </div>
                 </div>
             </div>
@@ -44,9 +44,8 @@
     </div>
     
 <!-- javascript -->
-<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
-<script type="text/javascript" src="js/bootstrap.js"></script>
-<script type="text/javascript" src="js/less-1.3.0.min.js"></script>
+<script type="text/javascript" src="../estilos/js/bootstrap.js"></script>
+<script type="text/javascript" src="../estilos/js/less-1.3.0.min.js"></script>
 <!-- /javascript -->
 <script type="text/javascript">
     $('#ayuda-index').affix({
