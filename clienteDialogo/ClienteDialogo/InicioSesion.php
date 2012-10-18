@@ -75,92 +75,92 @@
 
     <div id="page" class="container">
         
-        <div class="row">
+        <div id="header" class="row">
 
-            <div id="header" class="span12">
-                <div class="row">
-                        <!-- logo de la app -->
-                        <div class="app-logo span2">
-                            <img src="../estilos/img/html/app-logo.png" alt="" />
+            <!-- logo de la app -->
+            <div id="app-logo" class="span2">
+                <img src="../estilos/img/html/app-logo.png" alt="" />
+            </div>
+            <!-- fin logo de la app -->
+
+            <!-- titulo de la app -->
+            <div id="app-title" class="span4">
+                <h5>Universidad de Santiago de Chile <br>
+                    Departamento de Ingeniería Informática</h5>
+                <h3>Diálogo Remoto</h3>
+            </div>
+            <!-- fin titulo de la app -->
+
+            <!-- formulario de inicio de sesión -->
+            <div id="top-login" class="span6">
+                <form id="login" class="form-inline">
+                    <legend>Iniciar Sesión</legend>
+                    <div id="top-user">
+                        <div class="input-prepend">
+                            <span class="add-on"><i class="icon-user"></i></span>
+                            <input id="usuario" type="text" class="input-medium" placeholder="Nombre de Usuario">
                         </div>
-                        <!-- fin logo de la app -->
-
-                        <!-- titulo de la app -->
-                        <div class="app-title span4">
-                            <h5>Universidad de Santiago de Chile <br>
-                                Departamento de Ingeniería Informática</h5>
-                            <h3>Diálogo Remoto</h3>
+                    </div>        
+                    <div id="top-password">
+                        <div class="input-prepend">
+                            <span class="add-on"><i class="icon-lock"></i></span>
+                            <input id="contrasegna" type="password" class="input-small" placeholder="Contraseña">
                         </div>
-                        <!-- fin titulo de la app -->
+                        <a id="forgotPassword" href="#myModal" role="button" data-toggle="modal">¿Olvido su Contraseña?</a>
+                    </div>
+                    <a id="ingresar" class="btn btn-primary clearfix">Ingresar</a>
+                </form>
 
-                        <!-- formulario de inicio de sesión -->
-                        <div id="top-login" class="span6">
-                            <form id="login" class="form-inline">
-                                <legend>Iniciar Sesión</legend>
-                                <div id="top-user">
-                                    <div class="input-prepend">
-                                        <span class="add-on"><i class="icon-user"></i></span>
-                                        <input id="usuario" type="text" class="input-medium" placeholder="Nombre de Usuario">
-                                    </div>
-                                </div>        
-                                <div id="top-password">
-                                    <div class="input-prepend">
-                                        <span class="add-on"><i class="icon-lock"></i></span>
-                                        <input id="contrasegna" type="password" class="input-small" placeholder="Contraseña">
-                                    </div>
-                                    <a id="forgotPassword" href="#myModal" role="button" data-toggle="modal">¿Olvido su Contraseña?</a>
-                                </div>
-                                <a id="ingresar" class="btn btn-primary clearfix">Ingresar</a>
-                            </form>
-                            <?php require_once 'recuperacionContrasena.php';?>
-                            <?php require_once 'Controles/ControlNotificacion/ControlNotificacion.php';?>
-                        </div>
-                        <!-- fin de formulario de inicio de sesión -->                          
-                </div>
-            </div> <!-- #header -->
+                <?php require_once 'recuperacionContrasena.php';?>
+                <?php require_once 'Controles/ControlNotificacion/ControlNotificacion.php';?>
+            </div>
+            <!-- fin de formulario de inicio de sesión -->                           
+        </div> <!-- #header -->
 
-        </div><!-- .row -->
+    <div id="menu-bar" class="row">
+        <div class="span12">
+            <div class="navbar">
+                <div class="navbar-inner">
+                    <ul class="nav">
+                        <li class="active"><a rel="tooltip" title="first tooltip" href="#"><i class="icon-home"></i> Portada</a></li>
+                    </ul>
+                    <ul class="nav pull-right">
+                        <li><a href="../../servicioDialogo/uploads/ayuda/getting_started.doc" target="_blank" ><i class="icon-question-sign"></i> Ayuda</a></li>
+                    </ul>
+                 </div>
+            </div>    
+        </div>  
+    </div><!-- #menu-bar -->
 
-        <!-- Menú -->
-        <div id="menu-bar" class="navbar">
-            <div class="navbar-inner">
-                <ul class="nav">
-                    <li class="active"><a rel="tooltip" title="first tooltip" href="#"><i class="icon-home"></i> Portada</a></li>
-                </ul>
-                <ul class="nav pull-right">
-                    <li><a href="../../servicioDialogo/uploads/ayuda/getting_started.doc" target="_blank" ><i class="icon-question-sign"></i> Ayuda</a></li>
-                </ul>
+
+    <div id="barra-estado" class="row">
+        <div class="span12">
+            <ul class="breadcrumb">
+                <li class="active"><i class="icon-home"></i> Portada</li>
+            </ul>
+        </div> 
+    </div> <!-- #barra-estado -->       
+
+    <div class="row" id="content">
+
+        <div id="1st-col-home" class="span6">
+            <div class="hero-unit">
+                
+                <h3>¿Qué es...</h3>
+                <h1>Diálogo Remoto?</h1>
+                <p><br>Diálogo Remoto es una aplicación de código abierto desarrollada como producto de un proyecto de migración, en el contexto del trabajo de titulación del alumno Cristian Alberto Chávez Ramos, para la carrera de Ingeniería de Ejecución en Computación e Informática de la Universidad de Santiago de Chile.</p>
+                <p>
+                    <a class="btn btn-info btn-large" href="about.html" target="_blank"> Saber más</a>
+                </p>
             </div>
         </div>
-        <!-- fin Menú -->
 
-        <div class="row" id="content">
+        <div id="2nd-col-home" class="span6" >
+            <?php require_once 'VentanaRegistro.php';?>
+        </div>
 
-            <!-- barra de estado de navegación -->
-            <div class="span12">
-                <ul class="breadcrumb">
-                    <li class="active"><i class="icon-home"></i> Portada</li>
-                </ul>
-            </div>
-            <!-- fin barra de estado de navegación -->
+    </div><!-- #content -->
 
-            <div id="1st-col-home" class="span6">
-                <div class="hero-unit">
-                    
-                    <h3>¿Qué es...</h3>
-                    <h1>Diálogo Remoto?</h1>
-                    <p><br>Diálogo Remoto es una aplicación de código abierto desarrollada como producto de un proyecto de migración, en el contexto del trabajo de titulación del alumno Cristian Alberto Chávez Ramos, para la carrera de Ingeniería de Ejecución en Computación e Informática de la Universidad de Santiago de Chile.</p>
-                    <p>
-                        <a class="btn btn-info btn-large" href="about.html" target="_blank"> Saber más</a>
-                    </p>
-                </div>
-            </div>
-
-            <div id="2nd-col-home" class="span6" >
-                <?php require_once 'VentanaRegistro.php';?>
-            </div>
-
-        </div><!-- #content -->
         <!-- no agregar nada más, de aquí en adelante va footer.php -->
 <?php require_once '../footer.php';?>
 

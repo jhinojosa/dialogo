@@ -81,23 +81,3 @@
                 <div class="clearfix"></div>
             </div><!-- #user-panel -->                          
         </div><!-- #header -->
-
-        <div id="menu-bar" class="row">
-            <div class="span12">
-                <div class="navbar">
-                    <div class="navbar-inner">
-                        <ul class="nav">
-                            <li ><a href="#"><i class="icon-home"></i> <span>P</span>ortada</a></li>
-                            <li ><a href="#"><i class="icon-comment"></i> <span>N</span>uevo Diálogo</a></li>
-                            <li ><a href="#"><i class="icon-star"></i> <span>M</span>arcadores</a></li>
-                            <li ><a href="#"><i class="icon-eye-open"></i> <span>I</span>ntervenciones</a></li>
-                            <li ><a href="#"><i class="icon-warning-sign"></i> <span>A</span>lertas</a></li>
-                            <li ><a href="#"><i class="icon-refresh"></i> <span>R</span>efrescar</a></li>
-                        </ul>
-                        <ul class="nav pull-right">
-                            <li><a href="#"><i class="icon-question-sign"></i> A<span>y</span>uda</a></li>
-                        </ul>
-                    </div>
-                </div>    
-            </div>  
-        </div><!-- #menu-bar -->

@@ -1,8 +1,3 @@
-clienteDialogo/ClienteDialogo.Admin/Controladores/ConexionManager.js
-clienteDialogo/ClienteDialogo.GUI/Controladores/ConexionManager.js
-clienteDialogo/ClienteDialogo/Controladores/ConexionManager.js
-servicioDialogo/servicio.config.php
-
 # OS generated files #
 ######################
 .DS_Store

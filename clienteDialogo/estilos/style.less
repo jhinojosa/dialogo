@@ -37,6 +37,11 @@ body{
 				font-size:19px;
 			}
 		}
+		#notificar{
+			position: absolute;
+			top: 45px;
+			z-index: 999;
+		}
 		#user-panel{
 			text-align: right;
 			a{
@@ -57,10 +62,13 @@ body{
 
 	#menu-bar{
 		//margin-top: 10px;
+		.navbar-inner {
+			padding: 0;
+		}
 	}
 
 	#content{		
-		//min-height: 400px;
+		position:relative;
 		margin-bottom: 30px;
 
 		#barra-estado{
@@ -89,6 +97,16 @@ body{
 			text-align: right;
 		}
 
+		table{
+			margin-top: 20px;
+			margin-bottom: 20px;
+		}
+		textarea{
+			height: 150px;
+		}
+		#dialogo-config{
+			padding-top: 30px;
+		}
 
 	}
 
@@ -138,4 +156,16 @@ body{
 		color: #666;
 	}
 
+}
+
+#ayuda-index.affix{
+	top: 40px;
+	width: 300px;
+}
+
+#ayuda-index.affix-bottom{
+	width: 300px;
+	position: absolute;
+	top: auto;
+	bottom: 500px;
 }
