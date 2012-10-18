@@ -1,142 +1,91 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
-    <head>
+<?php include_once('../header.php'); ?>
 
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Sistema para el diálogo remoto</title>
+        <div id="menu-bar" class="row">
+            <div class="span12">
+                <div class="navbar">
+                    <div class="navbar-inner">
+                        <ul class="nav">
+                            <li ><a href="#"><i class="icon-home"></i> Portada</a></li>
+                            <li class="active"><a href="#"><i class="icon-comment"></i> Diálogos</a></li>
+                            <li ><a href="#" id="btnVerMarcadores"><i class="icon-star"></i> Marcadores</a></li>
+                            <li ><a href="#" id="btnBuscarIntervenciones"><i class="icon-eye-open"></i> Intervenciones</a></li>
+                        </ul>
+                        <ul class="nav pull-right">
+                            <li><a href="#"><i class="icon-question-sign"></i> Ayuda</a></li>
+                            <li><a href="#"><i class="icon-info-sign"></i> Acerca de</a></li>
+                        </ul>
+                    </div>
+                </div>    
+            </div>  
+        </div><!-- #menu-bar -->
 
-        <script>
-            /**
-             * Deshabilita el volver a la ventana anterior al cerrar la aplicación desde el botón.
-             */
-            if (history.forward(1)){location.replace(history.forward(1))}    
-        </script>
-        <!--Favicon-->
-        <link rel="shortcut icon" href="../Favicon/favicon.ico">
-
-        <!--Estilos de 960grid-->
-        <link rel="stylesheet" href="../CSS/960g_6col/grid.css" type="text/css">
-        <link rel="stylesheet" href="../CSS/960g_6col/reset.css" type="text/css">
-        <link rel="stylesheet" href="../CSS/960g_6col/text.css" type="text/css">
-
-        <!--Hoja de estilos jQueryUI-->
-        <link rel="stylesheet" href="../CSS/jQueryUI/custom-theme/jquery.ui.all.css" type="text/css">
-
-        <!--Javascript de jQuery-->
-        <script src="../Javascript/jQuery/jQuery-1.7.2/jquery-1.7.2.min.js" type="text/javascript"></script>
-
-        <!--Javascript de JqueryUI-->
-        <script src="../Javascript/jQuery/jquery-ui-1.8.20.custom-USACH/jquery-ui-1.8.20.custom.min.js" type="text/javascript"></script>
-
-
-        <!--Import de clases externas-->
-        <script src="../Javascript/soapclient2.1/soapclient21.js" type="text/javascript"></script>
-
-        <script src="../Javascript/jQuery/valums-file-uploader-cf7bfb1/client/fileuploader.js" type="text/javascript"></script>
-        <link rel="stylesheet" href="../Javascript/jQuery/valums-file-uploader-cf7bfb1/client/fileuploader.css" type="text/css"> 
-
-        <!--Codebehind de
-        VentanaPrincipal.php
-        DatosUsuario.php
-        ControlListaDialogo.php-->
-        <script src="Controls/controlListaDialogos.js" type="text/javascript"></script>
-        <script src="VentanaPrincipal.js" type="text/javascript"></script>
-        <script src="Controls/DatosUsuario.js" type="text/javascript"></script>
-        <script src="Controls/ControlNotificacion/ControlNotificacion.js" type="text/javascript"></script>
-
-        <!--Estilos de páginas:
-        VentanaPrincipal.css
-        DatosUsuario.css
-        controlListaDialogo.css-->
-        <link rel="stylesheet" href="VentanaPrincipal.css" type="text/css">
-        <link rel="stylesheet" href="Controls/DatosUsuario.css" type="text/css">
-        <link rel="stylesheet" href="Controls/controlListaDialogos.css" type="text/css">
-        <link rel="stylesheet" href="Controls/ControlNotificacion/ControlNotificacion.css" type="text/css">
-
-
-        <!--IMPORTS-->
-
-        <script src="datatypes/Usuario.js" type="text/javascript"></script>
-        <script src="datatypes/Sesion.js" type="text/javascript"></script>
-        <script src="datatypes/Intervencion.js" type="text/javascript"></script>
-        <script src="datatypes/Dialogo.js" type="text/javascript"></script>
-        <script src="datatypes/Acta.js" type="text/javascript"></script>
-        <script src="datatypes/Movida.js" type="text/javascript"></script>
-        <script src="datatypes/Balance.js" type="text/javascript"></script>
-        <script src="datatypes/Regla.js" type="text/javascript"></script>
-        <script src="Controladores/CSesion.js" type="text/javascript"></script>
-        <script src="Controladores/CDialogo.js" type="text/javascript"></script>
-        <script src="Controladores/ConexionManager.js" type="text/javascript"></script>
-        <script src="Controladores/CValidacionUsuario.js" type="text/javascript"></script>
-
-
-        <script>
-            
-        </script>
-    </head>
-
-    <body onload="document.getElementById('cargando').style.display='none';">
-
-        <div id="cargando" style="position: fixed; background-color: #ffffff; width: 100%; height: 100%; text-align: center;  font-weight: bold; color:#005190; z-index: 2147483646;" ><br><br>CARGANDO<br><img src="Images/ajax-loader.gif"></div>
-
-        <?php
-        $usuario = htmlspecialchars($_GET['usuario']);
-        $idsesion = htmlspecialchars($_GET['idsesion']);
-
-        echo "<input type=\"hidden\" id=\"usuarioM\" value=\"$usuario\">";
-        echo "<input type=\"hidden\" id=\"idsesion\" value=\"$idsesion\">";
-        ?> 
-
-        <?php
-        require_once 'Controls/ControlNotificacion/ControlNotificacion.php';
-        ?>
-
-        <div class="clear" style="height: 40px;"></div>
-        <div id="encabezado" class="container_6">
-            <div class="" id="imagenEncabezado">
-                <img id="logoUsach" alt="logoUsach" src="Images/logoUsach.png" >
-            </div>
-            <div class="grid_4" id="textoEncabezado">
-                <div class="encabezadoTexto_1">
-                    Diálogo Remoto
-                </div>
-                <div class="encabezadoTexto_2">
-                    Mejorando el entendimiento
-                </div>
-
-                <div id="DatosUsuario">
-                    <!--AQUÍ VA EL AVATAR, NOMBRE DE USUARIO Y BOTÓN CERRAR SESIÓN y ADMINISTRAR-->
-                    <?php
-                    include('Controls/DatosUsuario.php');
-                    ?>
-                </div>
-            </div>
-        </div>
-        <div class="clear" style="height: 20px;"></div>
-        <div>
-            <div id="barraBotones" class="">
-                <button id="btnNuevoDialogo" class="grid_1"> nuevo diálogo </button>
-                <button id="btnVerMarcadores" class="grid_1"> ver marcadores </button>
-                <button id="btnBuscarIntervenciones" class="grid_1"> buscar intervenciones </button>
-                <button id="btnVerAlertas" class="grid_1"> ver alertas </button>
-                <div id="btnRefrescar" class="grid_1">
-                    refrescar
-                </div>
-            </div>
-
-            <div class="clear" style="height: 10px;"></div>
-            <div class="container_6 ui-widget" id="listaDialogos">
-                <?php
-                include('Controls/controlListaDialogos.php');
-                ?>
-            </div>
+        <div id="barra-estado" class="row">
+          <div class="span12">
+            <ul class="breadcrumb">
+              <li><a href="#"><i class="icon-home"></i> Portada</a> <span class="divider">/</span></li>
+              <li class="active">Diálogos</li>
+            </ul>
+          </div> <!-- #barra-estado -->
         </div>
 
-        <div id="somediv"></div>
-        <!--Carga pantalla de advertencia cuando javascript no está habilitado-->
-        <noscript>
-            <meta http-equiv="Refresh" content="0; URL=../ClienteDialogo/Errores/JavascriptError.html" >
-        </noscript>
+<div class="row" id="content">
+<div id="main-content" class="span12">
+  <h3>Diálogos Disponibles</h3>
+  <div class="btn-group">
+  <button id="btnNuevoDialogo" class="btn"><i class="icon-plus-sign"></i><i class="icon-comment"></i> Nuevo Diálogo</button>
+  <button id="btnVerAlertas" class="btn"><i class="icon-warning-sign"></i> Alertas</button>
+  <button id="btnRefrescar" class="btn"><i class="icon-refresh"></i> Refrescar</button>
+</div>
+	 <!--<form id="buscar-dialogo" class="form-search">
+        <div class="input-prepend">
+           <span class="add-on"><i class="icon-search"></i> Buscar Diálogo</span>
+           <input type="text" class="input-medium search-query">
+        </div>
+    </form>-->
+    <table id="grilla" class="table table-striped table-bordered">
+          <thead>
+            <tr>
+              <th>idDialogo</th>
+              <th width="25%">Título</th>
+              <th width="12%">Autor</th>
+              <th width="15%">Publicación</th>
+              <th width="18%">Última intervención</th>
+              <th width="15%">Estado</th>
+              <th width="15%"> <span class="help-block"> Visible solo para el Administrador</span></th>     
+            </tr>
+          </thead>
+          <tbody>
+            <!--<tr>
+              <td><a href="ventana_dialogo.php">Grupo 2</a></td>
+              <td>Julio</td>
+              <td>04-09-2012</td>
+              <td>23-09-2012</td>
+              <td><span class="label label-important">Desbalanceado</span></td>
+              <td><button class="btn btn-block btn-small btn-danger"> Eliminar</button>
+              
+            </tr>
+            <tr>
+              <td><a href="ventana_dialogo.php">Grupo 3</a></td>
+              <td>Camilo</td>
+              <td>04-09-2012</td>
+              <td>23-09-2012</td>
+              <td><span class="label label-success">Balanceado</span></td>
+              <td><button class="btn btn-block btn-small btn-danger"> Eliminar</button></td>
+             
+            </tr>
+            <tr>
+              <td><a href="ventana_dialogo.php">Grupo 1</a></td>
+              <td>Gonzalo</td>
+              <td>04-09-2012</td>
+              <td>23-09-2012</td>
+              <td><span class="label label-success">Balanceado</span></td>
+              <td><button class="btn btn-block btn-small btn-danger"> Eliminar</button></td>
+              
+            </tr>-->
+          </tbody>
+    </table>
+</div><!-- #main-content -->
+</div><!-- #content -->
+<!--</div>-->
 
-    </body>
-</html>
+<?php include_once('../footer.php'); ?>

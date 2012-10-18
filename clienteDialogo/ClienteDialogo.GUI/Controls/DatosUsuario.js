@@ -199,7 +199,6 @@ DatosUsuario.prototype.InitializeComponents=function(){
     });
     $("#username").click(function(event){
         //        event.preventDefault();
-        
         $("#cambiarDatos").dialog("open");
     });
 }

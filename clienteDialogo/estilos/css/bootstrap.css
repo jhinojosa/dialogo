@@ -5772,3 +5772,7 @@ a.badge:hover {
 .affix {
   position: fixed;
 }
+
+#grilla_filter label, #grilla_filter label input {
+  /*background-color: red;*/
+}

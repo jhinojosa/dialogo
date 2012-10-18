@@ -1,12 +1,11 @@
 $(function() {
     
-    $("#btnNuevoDialogo").button({
+    /*$("#btnNuevoDialogo").button({
         icons : {
             primary : 'ui-icon-plusthick'
         }
-    });
-
-    $("#btnVerMarcadores").button({
+    });*/
+    /*$("#btnVerMarcadores").button({
         icons : {
             primary : 'ui-icon-star'
         }
@@ -28,7 +27,7 @@ $(function() {
         icons : {
             primary : 'ui-icon-refresh'
         }
-    });
+    });*/
     
     //parámetros usuario e idSesion vienen de inicioSesion.
     //valores obetnidos desde servicio web.
@@ -83,7 +82,6 @@ function VentanaPrincipal(usuario, idSesion) {
         }
     } catch(ex) {
     }
-    
     vNuevoDialogo = new Array();
     vDialogo = new Array();
     

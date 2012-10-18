@@ -9,7 +9,7 @@
                         Segundo Semestre de 2012</p>
                     </div>
                     <div id="usach-footer" class="span2">
-                        <a href="http://www.usach.cl/"><img src="img/html/usach-white.png" alt="" /></a>
+                        <a href="http://www.usach.cl/"><img src="../estilos/img/html/usach-white.png" alt="" /></a>
                     </div>
                 </div>
             </div>

@@ -6,7 +6,7 @@ $(function() {
         "bJQueryUI" : true,
         "bPaginate" : false,
         "bScrollInfinite" : true,
-        "bScrollCollapse" : true,
+        "bScrollCollapse" : false,
         "sScrollY" : "250px",
         "bServerSide" : false,
         "bFilter":true,
@@ -23,11 +23,11 @@ $(function() {
         },
         "aoColumns":[
         {
-            "sTitle":"idDialogo",
+            //"sTitle":"idDialogo",
             "bVisible":false
-        },
+        }, null, null, null, null, null, null,
 
-        {
+        /*{
             "sTitle":"Título"
         },
 
@@ -44,14 +44,14 @@ $(function() {
         },
 
         {
-            "sTitle":"<br>",
+            "sTitle":"Estado",
             "bSortable":false
         },
 
         {
-            "sTitle":"<br>",
+            "sTitle": "<span class=\"help-block\"> Visible solo para el Administrador</span>",
             "bSortable":false
-        },
+        },*/
         ]
     });
     
@@ -83,16 +83,16 @@ controlListaDialogos.prototype.setDialogos=function(lista) {
         var val = new Array();
         //Por temas de compatibilidad con WebKit (Chrome, safari) se hace push por separado.
         val.push(p.idDialogo);
-        val.push(p.Titulo);
+        val.push("<a href=\"#\" class=\"boton\">"+p.Titulo+"</a>");
         val.push(p.usuarioCreador.nombreUsuario);
         val.push(p.FechaCreacion);
         val.push(p.FechaUltimaIntervencion);
        
         if(p.estaDialogoDesbalanceado)
-            val.push("<div style=\"text-align: center; color: red; font-size:13px;\">Diálogo desbalanceado</div>");
+            val.push("<span class=\"label label-important\">Desbalanceado</span>");
         else
-            val.push("");
-        val.push("<button class=\"boton\">Ingresar</button>");
+            val.push("<span class=\"label label-success\">Balanceado</span>");
+        val.push("<button class=\"btn btn-block btn-small btn-danger\"> Eliminar</button>");
         encabezados.push(val);
     }
     
