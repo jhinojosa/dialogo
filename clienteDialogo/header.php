@@ -32,25 +32,35 @@
 <script src="../Javascript/jQuery/jquery-ui-1.8.20.custom-USACH/jquery-ui-1.8.20.custom.min.js" type="text/javascript"></script>
 <script src="../Javascript/soapclient2.1/soapclient21.js" type="text/javascript"></script>
 <script src="../Javascript/jQuery/valums-file-uploader-cf7bfb1/client/fileuploader.js" type="text/javascript"></script>
+<script src="../Javascript/jQuery/jwysiwyg/jwysiwyg/jquery.wysiwyg.js"></script>
 
-        <script src="Controls/controlListaDialogos.js" type="text/javascript"></script>
-        <script src="Controls/DatosUsuario.js" type="text/javascript"></script>
-        <script src="Controls/ControlNotificacion/ControlNotificacion.js" type="text/javascript"></script>
-        <script src="VentanaPrincipal.js" type="text/javascript"></script>
-        <script src="datatypes/Usuario.js" type="text/javascript"></script>
-        <script src="datatypes/Sesion.js" type="text/javascript"></script>
-        <script src="datatypes/Intervencion.js" type="text/javascript"></script>
-        <script src="datatypes/Dialogo.js" type="text/javascript"></script>
-        <script src="datatypes/Acta.js" type="text/javascript"></script>
-        <script src="datatypes/Movida.js" type="text/javascript"></script>
-        <script src="datatypes/Balance.js" type="text/javascript"></script>
-        <script src="datatypes/Regla.js" type="text/javascript"></script>
-        <script src="Controladores/CSesion.js" type="text/javascript"></script>
-        <script src="Controladores/CDialogo.js" type="text/javascript"></script>
-        <script src="Controladores/ConexionManager.js" type="text/javascript"></script>
-        <script src="Controladores/CValidacionUsuario.js" type="text/javascript"></script>
+<script src="Controls/controlListaDialogos.js" type="text/javascript"></script>
+<script src="Controls/DatosUsuario.js" type="text/javascript"></script>
+<script src="Controls/ControlNotificacion/ControlNotificacion.js" type="text/javascript"></script>
 
-        <script src="../Javascript/jQuery/DataTables-1.9.1/media/js/jquery.dataTables.js"></script>
+<!-- 
+Problema: scripts necesarios para nuevo dialogo, pero interfieren en la ventana de dialogos disponibles
+
+<script src="Controls/controlEscrituraIntervencion.js" type="text/javascript"></script>
+<script src="VentanaNuevoDialogo.js" type="text/javascript"></script>
+
+#Problema -->
+
+<script src="VentanaPrincipal.js" type="text/javascript"></script>
+<script src="datatypes/Usuario.js" type="text/javascript"></script>
+<script src="datatypes/Sesion.js" type="text/javascript"></script>
+<script src="datatypes/Intervencion.js" type="text/javascript"></script>
+<script src="datatypes/Dialogo.js" type="text/javascript"></script>
+<script src="datatypes/Acta.js" type="text/javascript"></script>
+<script src="datatypes/Movida.js" type="text/javascript"></script>
+<script src="datatypes/Balance.js" type="text/javascript"></script>
+<script src="datatypes/Regla.js" type="text/javascript"></script>
+<script src="Controladores/CSesion.js" type="text/javascript"></script>
+<script src="Controladores/CDialogo.js" type="text/javascript"></script>
+<script src="Controladores/ConexionManager.js" type="text/javascript"></script>
+<script src="Controladores/CValidacionUsuario.js" type="text/javascript"></script>
+
+<script src="../Javascript/jQuery/DataTables-1.9.1/media/js/jquery.dataTables.js"></script>
 <!-- modernizr -->
 <!--<script type="text/javascript" src="js/modernizr.js"></script>-->
 <!-- /modernizr -->

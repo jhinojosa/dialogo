@@ -3,36 +3,7 @@ $(function() {
     $(".btnCancelar").button();
     $(".btnEnviar").button();
     $(".btnCancelar").hide();
-    $(".btnEnviar").hide();
-    $(".txtIntervencion").wysiwyg({
-        iFrameClass: "",
-        controls : {
-            bold : {
-                visible : true
-            },
-            italic : {
-                visible : true
-            },
-            underline : {
-                visible : true
-            },
-
-            separator00 : {
-                visible : true
-            },
-
-            justifyLeft : {
-                visible : true
-            },
-            justifyCenter : {
-                visible : true
-            },
-            justifyRight : {
-                visible : true
-            }
-        }
-    });
-    
+    $(".btnEnviar").hide();   
 });
 
 
