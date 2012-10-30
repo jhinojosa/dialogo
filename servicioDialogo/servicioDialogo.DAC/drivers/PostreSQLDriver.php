@@ -61,7 +61,7 @@ class PostreSQLDriver implements DBDriver {
     public function consultar($query) {
         try {
             //echo "---".$query."---";
-            $da = pg_query($query);
+            $da = pg_query("SET datestyle = \"ISO, DMY\"; " . $query);
 
             $ds = pg_fetch_all($da);
             $_ret = $ds;
@@ -97,7 +97,7 @@ class PostreSQLDriver implements DBDriver {
 
         try {
             //echo $query;
-            $da = pg_query($query);
+            $da = pg_query("SET datestyle = \"ISO, DMY\"; " . $query);
 
             try {
                 $filas = pg_fetch_all($da);
@@ -124,7 +124,7 @@ class PostreSQLDriver implements DBDriver {
         try {
             $query = $query .= " returning " . $campoRetorno;
             //echo $query;
-            $da = pg_query($query);
+            $da = pg_query("SET datestyle = \"ISO, DMY\"; " . $query);
             
             try {
                 $_retorno = pg_fetch_all($da);
