@@ -32,6 +32,20 @@ class BC_Sesion {
                 $_retorno->creacion = date("d-m-Y H:i");
                 $_retorno->idSesion = $this->crearIdSesion($_retorno);
                 $_retorno->usuario = $_login;
+                
+                /**
+                 * Grupo 4 - Danilo Aburto
+                 * Para implementar sesiones se hace a nivel de variables en 
+                 * el servidor, ahora para utilizar la sesión creada es neces-
+                 * ario utilizar session_start en los lugares donde se requiere
+                 * que la sesión esté iniciada
+                 */
+                session_start();           
+                $_SESSION['user_fullname'] = $_login->nombreCompleto;
+                $_SESSION['user_username'] = $_login->nombreUsuario;
+                $_SESSION['user_email'] = $_login->email;
+                
+                
                 //$_retorno->expiracion = sumar 1 hora.
                 
                 //$_retorno->idSesion = $this->

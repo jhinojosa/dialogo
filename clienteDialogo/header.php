@@ -1,3 +1,18 @@
+<?php
+session_start();
+
+// Está la asesion iniciada? o nos están intentando embaucar?
+if( !isset($_SESSION['user_email']) ) {
+    
+    // Se realiza una redireccion
+    header('Location: ../../') ;
+}
+
+$user_username = $_SESSION['user_username'];
+$user_fullname = $_SESSION['user_fullname'];
+$user_email = $_SESSION['user_email'];
+$user_gravatar = 'http://www.gravatar.com/avatar/' . md5($user_email) . '/?s=90' ;
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
@@ -118,11 +133,11 @@ Problema: scripts necesarios para nuevo dialogo, pero interfieren en la ventana 
 
             <div id="user-panel" class="span6">
                 <div id="user-img">
-                    <img src="http://www.gravatar.com/avatar/<?php echo md5( strtolower( trim( "camilo.farfan@usach.cl" ) ) );?>=100" class="img-polaroid">    
+                    <img src="<?php echo $user_gravatar; ?>" class="img-polaroid">    
                 </div><!-- #user-img -->
 
                 <div id="user-options">
-                    <h4>Hola Camilo!</h4>
+                    <h4>Hola <?php echo $user_fullname; ?>!</h4>
                     <div class="btn-group">
                       <button id="btnAdministrar" class="btn btn-small"><i class="icon-wrench"></i> Administrar</button>
                       <button id="username" class="btn btn-small"><i class="icon-pencil"></i> Editar Perfil</button>

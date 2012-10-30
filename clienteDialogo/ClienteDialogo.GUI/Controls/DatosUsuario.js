@@ -235,8 +235,7 @@ DatosUsuario.prototype.resetUploader = function(){
 
 DatosUsuario.prototype.btnCerrarSesion_Click=function(sender){
     //Función no implementada en aplicación original.
-    window.open("../ClienteDialogo/InicioSesion.php", "_self");
-   
+    window.open("../ClienteDialogo/InicioSesion.php?logout=true", "_self");
 }
 DatosUsuario.prototype.btnAdministrar_Click=function(){
     
