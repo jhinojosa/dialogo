@@ -45,7 +45,6 @@ class BC_Sesion {
                 $_SESSION['user_username'] = $_login->nombreUsuario;
                 $_SESSION['user_email'] = $_login->email;
                 
-                
                 //$_retorno->expiracion = sumar 1 hora.
                 
                 //$_retorno->idSesion = $this->

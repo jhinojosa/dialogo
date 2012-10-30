@@ -7,7 +7,7 @@ if (isset($_REQUEST['logout'])) {
     // Se destruyen todas las variables de sesion
     $_SESSION = array();
 
-    // la sesion es destruida
+    // la sesion es destruida!
     session_destroy();
 }
 ?>

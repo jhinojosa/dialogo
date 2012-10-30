@@ -237,6 +237,7 @@ DatosUsuario.prototype.btnCerrarSesion_Click=function(sender){
     //Función no implementada en aplicación original.
     window.open("../ClienteDialogo/InicioSesion.php?logout=true", "_self");
 }
+
 DatosUsuario.prototype.btnAdministrar_Click=function(){
     
     window.open("../ClienteDialogo.Admin/VentanaAdministracion.php?idsesion=" + JSON.stringify(window.my.sesionActual.idSesion) + "&usuario=" + JSON.stringify(me.usuario.nombreUsuario));

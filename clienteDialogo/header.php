@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-// Está la asesion iniciada? o nos están intentando embaucar?
+// Está la asesion iniciada? o nos están intentando embaucar??
 if( !isset($_SESSION['user_email']) ) {
     
     // Se realiza una redireccion
