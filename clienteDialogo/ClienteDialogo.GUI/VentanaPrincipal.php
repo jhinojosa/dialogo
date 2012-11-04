@@ -88,4 +88,6 @@
 </div><!-- #content -->
 <!--</div>-->
 
+<script src="VentanaPrincipal.js" type="text/javascript"></script>
+
 <?php include_once('../footer.php'); ?>

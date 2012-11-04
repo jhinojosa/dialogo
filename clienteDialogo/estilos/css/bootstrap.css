@@ -5776,3 +5776,18 @@ a.badge:hover {
 #grilla_filter label, #grilla_filter label input {
   /*background-color: red;*/
 }
+
+#grilla_filter {
+  text-align: right;
+}
+
+.dataTables_scrollHead.ui-state-default {
+  bottom: 25px;
+}
+
+.dataTables_scrollBody {
+  position: relative;
+  bottom: 65px;
+  border-top-width: 0px;
+  height: 100%!important;
+}

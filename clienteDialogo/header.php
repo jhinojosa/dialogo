@@ -61,7 +61,7 @@ Problema: scripts necesarios para nuevo dialogo, pero interfieren en la ventana 
 
 #Problema -->
 
-<script src="VentanaPrincipal.js" type="text/javascript"></script>
+
 <script src="datatypes/Usuario.js" type="text/javascript"></script>
 <script src="datatypes/Sesion.js" type="text/javascript"></script>
 <script src="datatypes/Intervencion.js" type="text/javascript"></script>
