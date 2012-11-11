@@ -49,6 +49,7 @@ $user_gravatar = 'http://www.gravatar.com/avatar/' . md5($user_email) . '/?s=90'
 <script src="../Javascript/jQuery/valums-file-uploader-cf7bfb1/client/fileuploader.js" type="text/javascript"></script>
 <script src="../Javascript/jQuery/jwysiwyg/jwysiwyg/jquery.wysiwyg.js"></script>
 
+<script src="VentanaEstadisticas.js" type="text/javascript"></script>
 <script src="Controls/controlListaDialogos.js" type="text/javascript"></script>
 <script src="Controls/DatosUsuario.js" type="text/javascript"></script>
 <script src="Controls/ControlNotificacion/ControlNotificacion.js" type="text/javascript"></script>

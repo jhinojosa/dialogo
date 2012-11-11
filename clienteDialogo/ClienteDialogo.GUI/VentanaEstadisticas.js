@@ -66,7 +66,6 @@ VentanaEstadisticas.prototype.cargarEstadisticas=function(){
         //usuario no puede agregar filas.
         
         //se repite para las otras 2 tablas.
-        
         document.title = "Estadísticas para el diálogo "+this.Controlador.dialogoActual.Titulo;
         var gp = $("#grillaPorcentajes");
         if($.fn.DataTable.fnIsDataTable(gp)){
@@ -95,10 +94,9 @@ VentanaEstadisticas.prototype.cargarEstadisticas=function(){
             "bPaginate" : false,
             "bScrollInfinite" : true,
             "bScrollCollapse" : true,
+            "bAutoWidth":false,
             "sScrollY" : "300px",
-            "sScrollX" : "100%",
             "bServerSide" : false,
-            "bSort": false,
             "bFilter":false,
             "aoColumns":_ds[1].columnas,
             "aaData": _ds[1].datos
@@ -113,9 +111,9 @@ VentanaEstadisticas.prototype.cargarEstadisticas=function(){
             "bPaginate" : false,
             "bScrollInfinite" : true,
             "bScrollCollapse" : true,
+            "bAutoWidth":false,
             "sScrollY" : "300px",
             "bServerSide" : false,
-            "bSort": false,
             "bFilter":false,
             "aoColumns":_ds[2].columnas,
             "aaData": _ds[2].datos
