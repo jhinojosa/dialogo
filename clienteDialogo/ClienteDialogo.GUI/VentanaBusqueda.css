@@ -1,33 +1,5 @@
-body{
-    color: #444444;
-}
-div#busqueda {
-    height: 45px;
-    margin-left: 0px;
-}
 
-div#aBuscar {
-    //background-color: blue;
-    margin-left: 0px;
-}
 
-div#aBuscar label, div#aBuscar input {
-    width: 100%;
-    //background-color: green;
-}
+/* Grupo 4: Pachando aspecto*/
 
-#txtNombreUsuario{
-    border: #ff6600 thin solid;
-}
 
-div#boton {
-    text-align:right;
-    top:10px;
-    float: right;
-    margin-right: -20px;
-    //background-color: yellow;
-}
-
-div#boton input{
-    width: 100%;
-}

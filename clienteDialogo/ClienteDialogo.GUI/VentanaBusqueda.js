@@ -1,6 +1,5 @@
 $(function() {
     $("#btnBuscar").button();
- 
         
     {
         var valor = $("#sesion").val();
@@ -16,95 +15,98 @@ $(function() {
  */
 function VentanaBusqueda(sesionActual){
     me=this;
-    //Sesion
+    
+    // Se rescata la sesion actual
     this.sesionActual = sesionActual;
     this.initializeComponents();
     document.title="Búsqueda de intervenciones.";
 }
 
 VentanaBusqueda.prototype.initializeComponents = function(){
+
     $("#txtNombreUsuario").focus();
     $("#txtNombreUsuario").val("");
     
-    $("#btnBuscar").click(function(){
-        me.btnBuscar_Click(this);
+    $('#btnBuscar').click(function() {
+        me.btnBuscar_Click();
     });
+    
     $("#txtNombreUsuario").keyup(function(event){
         if(event.keyCode == 13){
             $("#btnBuscar").trigger('click');
         }
     });
-    
-    me.crearTablaMarcadores();
+    //alert('Fin inicialización componentes');
+    //me.crearTablaMarcadores();
 }
 
 VentanaBusqueda.prototype.btnBuscar_Click=function(sender){
+
     var nombreUsuario = $("#txtNombreUsuario").val();
     
+    // Se valida que la búsqueda no sea bacia
     if(!me.validar()){
         return;
     }
     
+    // Se realiza la petición al servidor
     var _controlador = new CMarcadores();
     var _err = "";
     var _searched = _controlador.buscarIntervenciones(me.sesionActual, nombreUsuario, _err);
-    if(_searched != null)
-        _searched.pop();
     
-    $("#dgResultado").dataTable().fnDestroy();
-    $("#dgResultado tbody").empty();
-    me.crearTablaMarcadores();
-    //llenar la tabla con un ciclo.
-    if(_searched != null){
-        for(var i=0;i<_searched.length;i++){
-            var _nueva = new Array();
-            _nueva[0] = _searched[i].dondeApunto.Texto;
+    if(_searched.length > 0){
+        _searched.pop(); 
         
-            _nueva[1] = _searched[i].dialogoAsociado.Titulo;
-            _nueva[2] = _searched[i].dialogoAsociado.idDialogo;
-            _nueva[3] = _searched[i].dondeApunto.idIntervencion;
+        // Se eliminan los resultados de la búsqueda anterior
+        $("#bi_resultado_body").html('');
         
-        
-            _nueva[4] = "<button class=\"verContexto\" style=\"width: 150px;\">Ver contexto</button>";
-        
-            $("#dgResultado").dataTable().fnAddData([_nueva]);
+        // Si se ha llegado hasta aqui se agregan los resultados
+        for (var i = 0;i < _searched.length; i++) {
+            
+            var texto = _searched[i].dondeApunto.Texto;
+            var titulo = _searched[i].dialogoAsociado.Titulo;
+            var id_dialogo = _searched[i].dialogoAsociado.idDialogo;
+            var id_interv = _searched[i].dondeApunto.idIntervencion;
+            
+            var btn_ver = '<button id="contexto-' + id_dialogo + '-' + id_interv + '" class="verContexto btn">Ver contexto</button>';
+            
+            $('#bi_resultado_body').append('<tr><td>'+texto+'</td><td>'+titulo+'</td><td>'+btn_ver+'</td></tr>');
         }
         
-        $(".verContexto").click(function(){
-            me.btnVerContexto_Executed(this);
+        $(".verContexto").each(function() {
+            $(this).click(function() {
+                var idDialogo = $(this).attr('id').split('-')[1];
+                var idIntervencion = $(this).attr('id').split('-')[2];
+                
+                //Abrir la ventana con sesionActual, idDialogo y idIntervencion
+                vD = window.open("VentanaDialogo.php?sesionActual="+JSON.stringify(me.sesionActual)+"&idDialogo="+idDialogo+"&idIntervencion="+idIntervencion, "vD" + Math.random());
+                vD.focus();
+                try{
+                    opener.vDialogo.push(vD);
+                }catch(ex){}
+            });
         });
-    }else{
         
+    } else {
+        $("#bi_resultado_body").html('<tr><td colspan="3">Lo sentimos, su búsqueda no ha arrojado resultados.</td></tr>');
     }
-    
-}
-
-VentanaBusqueda.prototype.btnVerContexto_Executed=function(sender){
-    var dataRow = $("#dgResultado").dataTable().fnGetData(sender.parentElement.parentElement);
-    var idDialogo = dataRow[2];
-    var idIntervencion = dataRow[3];
-    
-    //Abrir la ventana con sesionActual, idDialogo y idIntervencion
-    vD = window.open("VentanaDialogo.php?sesionActual="+JSON.stringify(me.sesionActual)+"&idDialogo="+idDialogo+"&idIntervencion="+idIntervencion, "vD" + Math.random());
-    vD.focus();
-    try{
-        opener.vDialogo.push(vD);
-    }catch(ex){}
 }
 
 
+
+/*
 VentanaBusqueda.prototype.crearTablaMarcadores=function(){
 
     $("#dgResultado").dataTable({
         
-        "bJQueryUI" : true,
+        "bJQueryUI" : false,
         "bPaginate" : false,
-        "bScrollInfinite" : true,
-        "bScrollCollapse" : true,
+        "bScrollInfinite" : false,
+        "bScrollCollapse" : false,
         "sScrollY" : "300px",
         "bServerSide" : false,
-        "bAutoWidth":true,
-        "bFilter":true,
+        "bAutoWidth":false,
+        "bFilter":false,
         "oLanguage":{
             "sInfo": "",
             "sSearch": "Buscar en estas intervenciones: ",
@@ -134,7 +136,7 @@ VentanaBusqueda.prototype.crearTablaMarcadores=function(){
     });
 //    $("#dgResultado").dataTable().fnClearTable();
 }
-
+*/
 
 VentanaBusqueda.prototype.validar = function(){
     var nombreUsuario = $("#txtNombreUsuario").val();
