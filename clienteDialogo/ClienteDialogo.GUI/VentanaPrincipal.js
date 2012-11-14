@@ -41,7 +41,6 @@ $(function() {
     {
         var usuario = JSON.parse($("#usuarioM").val());
         var idsesion = JSON.parse($("#idsesion").val());
-        //confirm(usuario);
         _ventanaPrincipal = new VentanaPrincipal(usuario, idsesion);
     }
 });

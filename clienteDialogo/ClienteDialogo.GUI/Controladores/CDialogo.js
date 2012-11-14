@@ -390,7 +390,6 @@ CDialogo.prototype.eliminarDialogo=function(idDialogo){
         mensajeError="No se pudo conectar con el servicio."
     }
 
-    //confirm("HOLA");
     return _ret;
 }
 

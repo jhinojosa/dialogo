@@ -57,4 +57,6 @@
     </div><!-- #main-content -->
 </div><!-- #content -->
 
+<script src="Controls/controlEscrituraIntervencion.js" type="text/javascript"></script>
+<script src="VentanaNuevoDialogo.js" type="text/javascript"></script>
 <?php include_once('../footer.php'); ?>
