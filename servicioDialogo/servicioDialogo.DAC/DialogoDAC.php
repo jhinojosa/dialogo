@@ -50,6 +50,23 @@ class DialogoDAC {
         return false;
     }
 
+    public function eliminarDialogo($idDialogo) {
+        try {
+            $conexion = ConnectionManager::ObtenerConexion();
+            $_exito = $conexion->abrirConexion();
+
+            if($_exito){
+                $_consulta = new Query($conexion, "dialogo");
+                $_consulta->addCondicion("n_id_dialogo =  " . $idDialogo);
+                $_ret = $conexion->modificar($_consulta->QueryDelete());
+                $conexion->cerrarConexion();
+                return $idDialogo;
+            }
+        } catch (Exception $e) {}
+
+        return false;
+    }
+
     /**
      * Actualiza en la base de datos el valor n_dialogo_desbalanceado
      * para el diálogo indicado por su ID, según el valor indicado.

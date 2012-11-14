@@ -199,6 +199,13 @@ class BCDialogo {
         return $_retorno;
     }
 
+    public function eliminarDialogo($idDialogo) {
+        $_dialogoDAC = new DialogoDAC();
+        $_ret = $_dialogoDAC->eliminarDialogo($idDialogo);
+
+        return $_ret;
+    }
+
     public function obtenerEncabezadoDialogo($idDialogo) {
         $_retorno = new Dialogo();
         $_retorno->idDialogo = $idDialogo;

@@ -56,7 +56,7 @@ ConexionManager.prototype.conexion=function(metodo, parametros){
         
         return _ret;
     }catch(ex){
-//        
+        confirm("jajajja");
     }
 
 }

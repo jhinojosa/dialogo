@@ -992,7 +992,7 @@ CREATE INDEX usuario_registra_fk ON acta USING btree (x_id_usuario);
 --
 
 ALTER TABLE ONLY acta
-    ADD CONSTRAINT fk_acta_dialogo_a_dialogo FOREIGN KEY (n_id_dialogo) REFERENCES dialogo(n_id_dialogo) ON UPDATE CASCADE ON DELETE CASCADE;
+    ADD CONSTRAINT fk_acta_dialogo_a_dialogo FOREIGN KEY (n_id_dialogo) REFERENCES dialogo(n_id_dialogo) ON UPDATE RESTRICT ON DELETE RESTRICT;
 
 
 --
@@ -1002,7 +1002,7 @@ ALTER TABLE ONLY acta
 --
 
 ALTER TABLE ONLY acta
-    ADD CONSTRAINT fk_acta_usuario_r_usuario FOREIGN KEY (x_id_usuario) REFERENCES usuario(x_id_usuario) ON UPDATE CASCADE ON DELETE CASCADE;
+    ADD CONSTRAINT fk_acta_usuario_r_usuario FOREIGN KEY (x_id_usuario) REFERENCES usuario(x_id_usuario) ON UPDATE RESTRICT ON DELETE RESTRICT;
 
 
 --
@@ -1012,7 +1012,7 @@ ALTER TABLE ONLY acta
 --
 
 ALTER TABLE ONLY balance
-    ADD CONSTRAINT fk_balance_balance_a_movida_d FOREIGN KEY (n_id_movida_dialogo) REFERENCES movida_dialogo(n_id_movida_dialogo) ON UPDATE CASCADE ON DELETE CASCADE;
+    ADD CONSTRAINT fk_balance_balance_a_movida_d FOREIGN KEY (n_id_movida_dialogo) REFERENCES movida_dialogo(n_id_movida_dialogo) ON UPDATE RESTRICT ON DELETE RESTRICT;
 
 
 --
@@ -1022,7 +1022,7 @@ ALTER TABLE ONLY balance
 --
 
 ALTER TABLE ONLY balance
-    ADD CONSTRAINT fk_balance_dialogo_t_dialogo FOREIGN KEY (n_id_dialogo) REFERENCES dialogo(n_id_dialogo) ON UPDATE CASCADE ON DELETE CASCADE;
+    ADD CONSTRAINT fk_balance_dialogo_t_dialogo FOREIGN KEY (n_id_dialogo) REFERENCES dialogo(n_id_dialogo) ON UPDATE RESTRICT ON DELETE RESTRICT;
 
 
 --
@@ -1032,7 +1032,7 @@ ALTER TABLE ONLY balance
 --
 
 ALTER TABLE ONLY correccion_movida
-    ADD CONSTRAINT fk_correcci_fk_creado_usuario FOREIGN KEY (x_id_usuario) REFERENCES usuario(x_id_usuario) ON UPDATE CASCADE ON DELETE CASCADE;
+    ADD CONSTRAINT fk_correcci_fk_creado_usuario FOREIGN KEY (x_id_usuario) REFERENCES usuario(x_id_usuario) ON UPDATE RESTRICT ON DELETE RESTRICT;
 
 
 --
@@ -1042,7 +1042,7 @@ ALTER TABLE ONLY correccion_movida
 --
 
 ALTER TABLE ONLY correccion_movida
-    ADD CONSTRAINT fk_correcci_tipo_de_m_movida_d FOREIGN KEY (n_id_movida_dialogo) REFERENCES movida_dialogo(n_id_movida_dialogo) ON UPDATE CASCADE ON DELETE CASCADE;
+    ADD CONSTRAINT fk_correcci_tipo_de_m_movida_d FOREIGN KEY (n_id_movida_dialogo) REFERENCES movida_dialogo(n_id_movida_dialogo) ON UPDATE RESTRICT ON DELETE RESTRICT;
 
 
 --
@@ -1052,7 +1052,7 @@ ALTER TABLE ONLY correccion_movida
 --
 
 ALTER TABLE ONLY correccion_movida
-    ADD CONSTRAINT fk_correccion_intervencion FOREIGN KEY (n_id_intervencion) REFERENCES intervencion(n_id_intervencion) ON UPDATE CASCADE ON DELETE CASCADE;
+    ADD CONSTRAINT fk_correccion_intervencion FOREIGN KEY (n_id_intervencion) REFERENCES intervencion(n_id_intervencion) ON UPDATE RESTRICT ON DELETE RESTRICT;
 
 
 --
@@ -1062,7 +1062,7 @@ ALTER TABLE ONLY correccion_movida
 --
 
 ALTER TABLE ONLY marcador
-    ADD CONSTRAINT fk_creador_marcador FOREIGN KEY (x_id_usuario) REFERENCES usuario(x_id_usuario) ON UPDATE CASCADE ON DELETE CASCADE;
+    ADD CONSTRAINT fk_creador_marcador FOREIGN KEY (x_id_usuario) REFERENCES usuario(x_id_usuario) ON UPDATE RESTRICT ON DELETE RESTRICT;
 
 
 --
@@ -1072,7 +1072,7 @@ ALTER TABLE ONLY marcador
 --
 
 ALTER TABLE ONLY nota_intervencion
-    ADD CONSTRAINT fk_creador_nota FOREIGN KEY (x_id_usuario) REFERENCES usuario(x_id_usuario) ON UPDATE CASCADE ON DELETE CASCADE;
+    ADD CONSTRAINT fk_creador_nota FOREIGN KEY (x_id_usuario) REFERENCES usuario(x_id_usuario) ON UPDATE RESTRICT ON DELETE RESTRICT;
 
 
 --
@@ -1082,7 +1082,7 @@ ALTER TABLE ONLY nota_intervencion
 --
 
 ALTER TABLE ONLY dialogo
-    ADD CONSTRAINT fk_dialogo_creador_d_usuario FOREIGN KEY (x_id_usuario_facilitador) REFERENCES usuario(x_id_usuario) ON UPDATE CASCADE ON DELETE CASCADE;
+    ADD CONSTRAINT fk_dialogo_creador_d_usuario FOREIGN KEY (x_id_usuario_facilitador) REFERENCES usuario(x_id_usuario) ON UPDATE RESTRICT ON DELETE RESTRICT;
 
 
 --
@@ -1092,7 +1092,7 @@ ALTER TABLE ONLY dialogo
 --
 
 ALTER TABLE ONLY dialogo
-    ADD CONSTRAINT fk_dialogo_mediador__usuario FOREIGN KEY (x_id_usuario_creador) REFERENCES usuario(x_id_usuario) ON UPDATE CASCADE ON DELETE CASCADE;
+    ADD CONSTRAINT fk_dialogo_mediador__usuario FOREIGN KEY (x_id_usuario_creador) REFERENCES usuario(x_id_usuario) ON UPDATE RESTRICT ON DELETE RESTRICT;
 
 
 --
@@ -1102,7 +1102,7 @@ ALTER TABLE ONLY dialogo
 --
 
 ALTER TABLE ONLY intervencion
-    ADD CONSTRAINT fk_interven_dialogo_p_dialogo FOREIGN KEY (n_id_dialogo) REFERENCES dialogo(n_id_dialogo) ON UPDATE CASCADE ON DELETE CASCADE;
+    ADD CONSTRAINT fk_interven_dialogo_p_dialogo FOREIGN KEY (n_id_dialogo) REFERENCES dialogo(n_id_dialogo) ON UPDATE RESTRICT ON DELETE RESTRICT;
 
 
 --
@@ -1112,7 +1112,7 @@ ALTER TABLE ONLY intervencion
 --
 
 ALTER TABLE ONLY intervencion
-    ADD CONSTRAINT fk_interven_movida_co_movida_d FOREIGN KEY (n_id_movida) REFERENCES movida_dialogo(n_id_movida_dialogo) ON UPDATE CASCADE ON DELETE CASCADE;
+    ADD CONSTRAINT fk_interven_movida_co_movida_d FOREIGN KEY (n_id_movida) REFERENCES movida_dialogo(n_id_movida_dialogo) ON UPDATE RESTRICT ON DELETE RESTRICT;
 
 
 --
@@ -1122,7 +1122,7 @@ ALTER TABLE ONLY intervencion
 --
 
 ALTER TABLE ONLY intervencion
-    ADD CONSTRAINT fk_interven_movida_de_movida_d FOREIGN KEY (n_id_movida_original) REFERENCES movida_dialogo(n_id_movida_dialogo) ON UPDATE CASCADE ON DELETE CASCADE;
+    ADD CONSTRAINT fk_interven_movida_de_movida_d FOREIGN KEY (n_id_movida_original) REFERENCES movida_dialogo(n_id_movida_dialogo) ON UPDATE RESTRICT ON DELETE RESTRICT;
 
 
 --
@@ -1132,7 +1132,7 @@ ALTER TABLE ONLY intervencion
 --
 
 ALTER TABLE ONLY intervencion
-    ADD CONSTRAINT fk_interven_usuario_i_usuario FOREIGN KEY (x_id_usuario) REFERENCES usuario(x_id_usuario) ON UPDATE CASCADE ON DELETE CASCADE;
+    ADD CONSTRAINT fk_interven_usuario_i_usuario FOREIGN KEY (x_id_usuario) REFERENCES usuario(x_id_usuario) ON UPDATE RESTRICT ON DELETE RESTRICT;
 
 
 --
@@ -1142,7 +1142,7 @@ ALTER TABLE ONLY intervencion
 --
 
 ALTER TABLE ONLY maestro_det_categoria
-    ADD CONSTRAINT fk_maestro__categoria_maestro_ FOREIGN KEY (n_id_categoria) REFERENCES maestro_categoria(n_id_categoria) ON UPDATE CASCADE ON DELETE CASCADE;
+    ADD CONSTRAINT fk_maestro__categoria_maestro_ FOREIGN KEY (n_id_categoria) REFERENCES maestro_categoria(n_id_categoria) ON UPDATE RESTRICT ON DELETE RESTRICT;
 
 
 --
@@ -1152,7 +1152,7 @@ ALTER TABLE ONLY maestro_det_categoria
 --
 
 ALTER TABLE ONLY maestro_categoria
-    ADD CONSTRAINT fk_maestro__creador_c_usuario FOREIGN KEY (x_id_usuario) REFERENCES usuario(x_id_usuario) ON UPDATE CASCADE ON DELETE CASCADE;
+    ADD CONSTRAINT fk_maestro__creador_c_usuario FOREIGN KEY (x_id_usuario) REFERENCES usuario(x_id_usuario) ON UPDATE RESTRICT ON DELETE RESTRICT;
 
 
 --
@@ -1162,7 +1162,7 @@ ALTER TABLE ONLY maestro_categoria
 --
 
 ALTER TABLE ONLY maestro_movida
-    ADD CONSTRAINT fk_maestro__creador_m_usuario FOREIGN KEY (x_id_usuario) REFERENCES usuario(x_id_usuario) ON UPDATE CASCADE ON DELETE CASCADE;
+    ADD CONSTRAINT fk_maestro__creador_m_usuario FOREIGN KEY (x_id_usuario) REFERENCES usuario(x_id_usuario) ON UPDATE RESTRICT ON DELETE RESTRICT;
 
 
 --
@@ -1172,7 +1172,7 @@ ALTER TABLE ONLY maestro_movida
 --
 
 ALTER TABLE ONLY maestro_regla
-    ADD CONSTRAINT fk_maestro__creador_r_usuario FOREIGN KEY (x_id_usuario) REFERENCES usuario(x_id_usuario) ON UPDATE CASCADE ON DELETE CASCADE;
+    ADD CONSTRAINT fk_maestro__creador_r_usuario FOREIGN KEY (x_id_usuario) REFERENCES usuario(x_id_usuario) ON UPDATE RESTRICT ON DELETE RESTRICT;
 
 
 --
@@ -1182,7 +1182,7 @@ ALTER TABLE ONLY maestro_regla
 --
 
 ALTER TABLE ONLY maestro_det_categoria
-    ADD CONSTRAINT fk_maestro__detalle_t_maestro_ FOREIGN KEY (n_id_movida) REFERENCES maestro_movida(n_id_movida) ON UPDATE CASCADE ON DELETE CASCADE;
+    ADD CONSTRAINT fk_maestro__detalle_t_maestro_ FOREIGN KEY (n_id_movida) REFERENCES maestro_movida(n_id_movida) ON UPDATE RESTRICT ON DELETE RESTRICT;
 
 
 --
@@ -1192,7 +1192,7 @@ ALTER TABLE ONLY maestro_det_categoria
 --
 
 ALTER TABLE ONLY marcador
-    ADD CONSTRAINT fk_marcador_intervencion FOREIGN KEY (n_id_intervencion) REFERENCES intervencion(n_id_intervencion) ON UPDATE CASCADE ON DELETE CASCADE;
+    ADD CONSTRAINT fk_marcador_intervencion FOREIGN KEY (n_id_intervencion) REFERENCES intervencion(n_id_intervencion) ON UPDATE RESTRICT ON DELETE RESTRICT;
 
 
 --
@@ -1202,7 +1202,7 @@ ALTER TABLE ONLY marcador
 --
 
 ALTER TABLE ONLY movida_dialogo
-    ADD CONSTRAINT fk_movida_d_movidas_p_dialogo FOREIGN KEY (n_id_dialogo) REFERENCES dialogo(n_id_dialogo) ON UPDATE CASCADE ON DELETE CASCADE;
+    ADD CONSTRAINT fk_movida_d_movidas_p_dialogo FOREIGN KEY (n_id_dialogo) REFERENCES dialogo(n_id_dialogo) ON UPDATE RESTRICT ON DELETE RESTRICT;
 
 
 --
@@ -1212,7 +1212,7 @@ ALTER TABLE ONLY movida_dialogo
 --
 
 ALTER TABLE ONLY nota_intervencion
-    ADD CONSTRAINT fk_nota_int_nota_de_i_interven FOREIGN KEY (n_id_intervencion) REFERENCES intervencion(n_id_intervencion) ON UPDATE CASCADE ON DELETE CASCADE;
+    ADD CONSTRAINT fk_nota_int_nota_de_i_interven FOREIGN KEY (n_id_intervencion) REFERENCES intervencion(n_id_intervencion) ON UPDATE RESTRICT ON DELETE RESTRICT;
 
 
 --
@@ -1222,7 +1222,7 @@ ALTER TABLE ONLY nota_intervencion
 --
 
 ALTER TABLE ONLY regla_dialogo
-    ADD CONSTRAINT fk_regla_di_dialogo_t_dialogo FOREIGN KEY (n_id_dialogo) REFERENCES dialogo(n_id_dialogo) ON UPDATE CASCADE ON DELETE CASCADE;
+    ADD CONSTRAINT fk_regla_di_dialogo_t_dialogo FOREIGN KEY (n_id_dialogo) REFERENCES dialogo(n_id_dialogo) ON UPDATE RESTRICT ON DELETE RESTRICT;
 
 
 --
@@ -1232,7 +1232,7 @@ ALTER TABLE ONLY regla_dialogo
 --
 
 ALTER TABLE ONLY intervencion
-    ADD CONSTRAINT fk_respuesta_int FOREIGN KEY (n_id_respuesta) REFERENCES intervencion(n_id_intervencion) ON UPDATE CASCADE ON DELETE CASCADE;
+    ADD CONSTRAINT fk_respuesta_int FOREIGN KEY (n_id_respuesta) REFERENCES intervencion(n_id_intervencion) ON UPDATE RESTRICT ON DELETE RESTRICT;
 
 
 --

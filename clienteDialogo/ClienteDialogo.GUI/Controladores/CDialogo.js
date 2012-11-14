@@ -371,6 +371,29 @@ CDialogo.prototype.publicarDialogo=function(dialogo, mensajeError){
     return _ret;
 }
 
+CDialogo.prototype.eliminarDialogo=function(idDialogo){
+
+    var _ret = false;
+    try{
+        var _cm = new ConexionManager();
+
+        var parametros = new SOAPClientParameters();
+        parametros.add("iddialogo", JSON.stringify(idDialogo));
+        
+        //parametros.add("dialogo", JSON.stringify(dialogo));
+        
+        _ret = _cm.conexion("eliminarDialogo", parametros);
+
+        confirm(_ret);
+        return _ret;
+    } catch(ex){
+        mensajeError="No se pudo conectar con el servicio."
+    }
+
+    //confirm("HOLA");
+    return _ret;
+}
+
 /**
  * 
  * Gestiona el envío de sugerencias para una movida.

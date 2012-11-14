@@ -208,6 +208,13 @@ function seleccionarDialogo_Executed(){
         
     //En el dataTable, tal como en el programa original, se debe almacenar el objeto completo.
     //controla que el evento se realice solo cuando se hace click en el boton.
+    if(arguments[0].target.className=="btn btn-block btn-small btn-danger"){
+            //Eliminar diálogo
+            var dataTr = oTable.fnGetData(this);
+
+            this.controladorDialogo=new CDialogo(this.sesionActual);
+            this.controladorDialogo.eliminarDialogo(dataTr[0]);
+    }
     if(arguments[0].target.className=="boton"){
         //recupera la información de la fila en la que se encuentra el botón.
         //oTable proviene de controlListaDialogos.js

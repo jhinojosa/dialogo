@@ -63,7 +63,7 @@ $(function() {
     //evento: click.
     //aplicado sobre <tr></tr>
     //realizando la acción de 
-    //oTable.on("click","tr",seleccionarDialogo_Executed);
+    oTable.on("click","tr",seleccionarDialogo_Executed);
 });
 
 function controlListaDialogos(){

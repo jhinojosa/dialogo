@@ -281,6 +281,17 @@ $server->register("ServicioDialogo.publicarDialogo", // method name
         "http://schemas.xmlsoap.org/soap/encoding/" //encoding scheme.
 );
 
+$server->register("ServicioDialogo.eliminarDialogo", // method name
+        array("iddialogo" => "xsd:int"), // input parameters
+        array("return" => "xsd:string"), // output parameters
+        $namespace, // namespace
+        false, //"urn:servicioDialogo#listarAlertas", // soapaction
+        "rpc", // style. rpc or document
+        "encoded", // use. encoded or literal.
+        "", // documentation
+        "http://schemas.xmlsoap.org/soap/encoding/" //encoding scheme.
+);
+
 $server->register("ServicioDialogo.listarMarcadores", // method name
         array("sesion" => "xsd:string"), // input parameters
         array("return" => "xsd:Array"), // output parameters
@@ -634,6 +645,20 @@ class ServicioDialogo{
         $_ret[0] = $_retorno;
         $_ret[1] = $_mensajeError;
         return json_encode($_ret);
+    }
+
+    function eliminarDialogo($idDialogo){
+        $idDialogo = json_decode($idDialogo);
+        try {
+            $_negocio = new BCDialogo();
+            $_retorno = $_negocio->eliminarDialogo($idDialogo);
+
+            return json_encode($_retorno);
+        } catch (Exception $e) {
+            $_mensajeError = "Ocurrió un error inesperado. Inténtelo otra vez.";
+        }
+
+        return json_encode("Volví con error =(");
     }
 
     /**

@@ -54,12 +54,12 @@ $user_gravatar = 'http://www.gravatar.com/avatar/' . md5($user_email) . '/?s=90'
 <script src="Controls/DatosUsuario.js" type="text/javascript"></script>
 <script src="Controls/ControlNotificacion/ControlNotificacion.js" type="text/javascript"></script>
 
-<!-- 
+<!--
 Problema: scripts necesarios para nuevo dialogo, pero interfieren en la ventana de dialogos disponibles
-
+-->
 <script src="Controls/controlEscrituraIntervencion.js" type="text/javascript"></script>
 <script src="VentanaNuevoDialogo.js" type="text/javascript"></script>
-
+<!--
 #Problema -->
 
 
