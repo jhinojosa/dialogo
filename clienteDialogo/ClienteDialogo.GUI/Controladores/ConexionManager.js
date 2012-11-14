@@ -53,10 +53,9 @@ ConexionManager.prototype.conexion=function(metodo, parametros){
         var _ret;
         
         _ret = SOAPClient.invoke(this.url, "ServicioDialogo."+metodo, parametros, false, false);
-        
+
         return _ret;
     }catch(ex){
-        confirm("jajajja");
     }
 
 }
