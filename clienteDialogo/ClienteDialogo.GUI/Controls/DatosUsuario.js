@@ -46,7 +46,6 @@ function DatosUsuario(){
         alert(ex);
     }
     this.usuario;
-    
     this.InitializeComponents();
     
 }

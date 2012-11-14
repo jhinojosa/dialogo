@@ -68,9 +68,9 @@ function VentanaPrincipal(usuario, idSesion) {
         
        
         
-        controlListaDialogos = new controlListaDialogos();
+        controlListaDialogos = new controlListaDialogos(this.sesionActual.usuario);
         
-        this.actualizarListaDialogos(this.sesionActual);
+        this.actualizarListaDialogos1(this.sesionActual);
         
         this.InitializeComponents();
         
@@ -203,6 +203,34 @@ VentanaPrincipal.prototype.actualizarListaDialogos = function(sesionActual) {
     $("body").css("cursor", "default");
 }
 
+VentanaPrincipal.prototype.actualizarListaDialogos1 = function(sesionActual) {
+    //alert("actualizarListaDialogos");
+    $("body").css("cursor", "wait");
+    //ventana de espera, o cursor en espera.
+    try {
+        var _err="";
+        //_encabezados es un arreglo de Dialogo
+        var _encabezados = _controlador.listarDialogos(this.sesionActual, 1, _err);
+        
+        
+        //carga de los diálogos luego de cargar la pagina completamente.
+        if(_encabezados[0].length > 0)
+            controlListaDialogos.setDialogos1(_encabezados[0]);
+        else
+        if(_encabezados[1]!= ""){
+        //            $("#notificar").dialog("open");
+        //            $("#textoNotificar").html(_encabezados[1]);
+        }
+        
+    } catch(ex) {
+        $("body").css("cursor", "default");
+        notificar("Error al obtener los datos desde el servidor");
+    }
+    
+    $("body").css("cursor", "default");
+}
+
+
 //Ejecuta la función de entrar a un diálogo.
 function seleccionarDialogo_Executed(){
         
@@ -218,7 +246,8 @@ function seleccionarDialogo_Executed(){
                 if(retorno){
                     alert("Diálogo eliminado");
                     //$("#grilla").load("VentanaPrincipal.php");
-                    location.reload();
+                    //location.reload();
+                    my.actualizarListaDialogos(my.sesionActual);
                 }
             }
     }
