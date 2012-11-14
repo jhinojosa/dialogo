@@ -211,9 +211,16 @@ function seleccionarDialogo_Executed(){
     if(arguments[0].target.className=="btn btn-block btn-small btn-danger"){
             //Eliminar diálogo
             var dataTr = oTable.fnGetData(this);
-
-            this.controladorDialogo=new CDialogo(this.sesionActual);
-            this.controladorDialogo.eliminarDialogo(dataTr[0]);
+            if(confirm("¿Está seguro de que desea eliminar el diálogo del sistema?")){
+                var retorno;
+                this.controladorDialogo=new CDialogo(this.sesionActual);
+                retorno = this.controladorDialogo.eliminarDialogo(dataTr[0]);
+                if(retorno){
+                    alert("Diálogo eliminado");
+                    //$("#grilla").load("VentanaPrincipal.php");
+                    location.reload();
+                }
+            }
     }
     if(arguments[0].target.className=="boton"){
         //recupera la información de la fila en la que se encuentra el botón.

@@ -60,7 +60,7 @@ class DialogoDAC {
                 $_consulta->addCondicion("n_id_dialogo =  " . $idDialogo);
                 $_ret = $conexion->modificar($_consulta->QueryDelete());
                 $conexion->cerrarConexion();
-                return $idDialogo;
+                return $_ret;
             }
         } catch (Exception $e) {}
 

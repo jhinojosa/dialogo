@@ -3,7 +3,7 @@ $(function() {
     
     $("#btnAdministrar").button();
     
-    $("#cambiarDatos").dialog({
+    /*$("#cambiarDatos").dialog({
         title: "Cambiar datos de usuario",
         autoOpen : false,
         height : 620,
@@ -34,7 +34,7 @@ $(function() {
             });
             $("#lblMensajeError").text("Campos con * son obligatorios.");
         }
-    });
+    });*/
     
 });
 

@@ -283,7 +283,7 @@ $server->register("ServicioDialogo.publicarDialogo", // method name
 
 $server->register("ServicioDialogo.eliminarDialogo", // method name
         array("iddialogo" => "xsd:int"), // input parameters
-        array("return" => "xsd:string"), // output parameters
+        array("return" => "xsd:bool"), // output parameters
         $namespace, // namespace
         false, //"urn:servicioDialogo#listarAlertas", // soapaction
         "rpc", // style. rpc or document

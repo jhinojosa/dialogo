@@ -384,7 +384,6 @@ CDialogo.prototype.eliminarDialogo=function(idDialogo){
         
         _ret = _cm.conexion("eliminarDialogo", parametros);
 
-        confirm(_ret);
         return _ret;
     } catch(ex){
         mensajeError="No se pudo conectar con el servicio."
