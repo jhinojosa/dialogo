@@ -1,3 +1,19 @@
+<?php
+session_start();
+
+// Está la asesion iniciada? o nos están intentando embaucar??
+if( !isset($_SESSION['user_email']) ) {
+    
+    // Se realiza una redireccion
+    header('Location: ../../') ;
+}
+
+$user_username = $_SESSION['user_username'];
+$user_fullname = $_SESSION['user_fullname'];
+$user_email = $_SESSION['user_email'];
+$user_gravatar = 'http://www.gravatar.com/avatar/' . md5($user_email) . '/?s=90' ;
+?>
+
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
     "http://www.w3.org/TR/html4/strict.dtd">
 <html>
@@ -5,14 +21,12 @@
 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Sistema para el diálogo remoto</title>
-
-        <!--Favicon-->
-        <link rel="shortcut icon" href="../Favicon/favicon.ico">
+        
+        
 
         <!--Estilos de 960grid-->
         <link rel="stylesheet" href="../CSS/960g_6col/grid.css" type="text/css">
-        <link rel="stylesheet" href="../CSS/960g_6col/reset.css" type="text/css">
-        <link rel="stylesheet" href="../CSS/960g_6col/text.css" type="text/css">
+        
 
         <!--Hoja de estilos jQueryUI-->
         <link rel="stylesheet" href="../CSS/jQueryUI/custom-theme/jquery.ui.all.css" type="text/css">
@@ -100,12 +114,16 @@
         <!--[if lt IE 9]>
         <script src="../Javascript/ie7/IE9.js" type="text/javascript"></script>
         <![endif]-->
+        
+        <!-- css -->
+        <link rel="stylesheet/less" type="text/css" href="../estilos/style.less">
+        <link rel="stylesheet" href="../estilos/css/bootstrap.css" type="text/css" media="screen" />
+
+        <!-- /css-->
     </head>
 
-    <body onload="document.getElementById('cargando').style.display='none';">
-
-        <div id="cargando" style="position: fixed; background-color: #ffffff; width: 100%; height: 100%; text-align: center;  font-weight: bold; color:#005190; z-index: 2147483646;" ><br><br>CARGANDO<br><img src="Images/ajax-loader.gif"></div>
-
+    <body>
+    
         <?php
         $sesionActual = htmlspecialchars($_GET['sesionActual']);
         $idDialogo = $_GET['idDialogo'];
@@ -127,7 +145,7 @@
         include('Controls/contextMenus/responderContextMenu.php');
         ?>
 
-        <div class="clear" style="height: 20px;"></div>
+
         <!--
         Elemento de ayuda para los tipos de movida.
         -->
@@ -142,191 +160,218 @@
             </p>
         </div>
         
-        <div id="encabezado" class="container_6">
-            <div class="" id="imagenEncabezado">
-                <img id="logoUsach" alt="logoUsach" src="Images/logoUsach.png" >
-            </div>
-            <div class="grid_4" id="textoEncabezado">
-                <div class="encabezadoTexto_1">
-                    <a>Diálogo Remoto</a>
-                </div>
-                <div class="encabezadoTexto_2">
-                    <a>Mejorando el entendimiento</a>
-                </div>
-            </div>
+<div id="page" class="container wide">
+    <div id="header" class="row">
+        <div id="app-logo" class="span2">
+            <img src="../estilos/img/html/app-logo.png" alt="" />
+        </div><!-- #app-logo -->
+        <div id="app-title" class="span4">
+            <h5>Universidad de Santiago de Chile <br>
+            Departamento de Ingeniería Informática</h5>
+            <h3>Diálogo Remoto</h3>
+        </div><!-- #app-title -->
 
-            <div id="tituloPaginaActual" class="grid_4">
-                <a>Dialogando.</a>
-            </div>
-        </div>
+        <div id="user-panel" class="span6">
+            <div id="user-img">
+                <img src="<?php echo $user_gravatar; ?>" class="img-polaroid">    
+            </div><!-- #user-img -->
 
-        <div class="clear ui-widget" style="height: 30px;"></div>
+            <div id="user-options">
+                <h4>Hola <?php echo $user_fullname; ?>!</h4>
+                <div class="btn-group">
+                    <button id="btnAdministrar" class="btn btn-small"><i class="icon-wrench"></i> Administrar</button>
+                    <button id="username" class="btn btn-small"><i class="icon-pencil"></i> Editar Perfil</button>
+                    <button id="btnCerrarSesion" class="btn btn-small"><i class="icon-off"></i> Cerrar Sesión</button>
+                </div>    
+            </div><!-- #user-options -->
+            <div class="clearfix"></div>
+        </div><!-- #user-panel -->                          
+    </div><!-- #header -->
 
-        <div class="container_6">
-            <div id="tabs" >
-                <ul>
-                    <li>
-                        <a href="#tab1">Acerca del diálogo</a>
-                    </li>
-                    <li>
-                        <a href="#tab2">Explorador de diálogo</a>
-                    </li>
-                    <li id="todasActas">
-                        <a href="#tab3">Actas del diálogo</a>
-                    </li>
-                </ul>
-                <div id="tab1">
-                    <div class="grid_6" id="encabezadoTab1">
-                        <div id="imagenUsuario" class="grid_1">
-                            <img src="Images/no_user_photo-v1.gif" alt="no-user" width="50" height="">
+    <div class="row">
+        <div  class="tabbable span12">
+            <ul class="nav nav-tabs">
+                
+                <li class="active"><a href="#tab2" class="active" data-toggle="tab" id="anchor2">Explorador de diálogo</a></li>
+                <li><a href="#tab1" data-toggle="tab" id="anchor1">Acerca del diálogo</a></li>
+                <!--<li id="todasActas" data-toggle="tab"><a href="#tab3">Actas del diálogo</a></li>-->
+            </ul>
+            <div class="tab-content">
+                <div id="tab1" class="tab-pane">
+                    
+                    <div class="row">
+                        <div class="span12" id="encabezadoTab1">
+                            <div id="imagenUsuario" class="grid_1">
+                                <img src="Images/no_user_photo-v1.gif" alt="no-user" width="50" height="">
+                            </div>
+                            <div id="datos" class="span4">
+                                <div class="grid_1">Título:</div>
+                                <div id="lblTitulo"class="data grid_3">título aquí</div>
+                                <div class="grid_1">Nombre del creador:</div>
+                                <div id="lblNombreUsuario" class="data grid_3">nombre de usuario aquí</div>
+                                <div class="grid_1">Fecha de creación:</div>
+                                <div id="lblFechaCreacion" class="data grid_3">fecha de creación aquí</div>
+                            </div>
+                            <div class="clear"></div>
+                            <div>
+                                <button class="button" id="btnVerEstadisticas">Ver estadísticas</button>
+                            </div>
+                            <div class="clear"></div>
+                            <div id="btnsRefPar">
+                                <button class="btn" id="btnConfigurar">Configurar</button>
+                                <button class="btn" id="btnParticipar">Participar</button>
+                            </div>
+                            <div class="clear"></div>
                         </div>
-                        <div id="datos" class="grid_4">
-                            <div class="grid_1">
-                                Título:
-                            </div>
-                            <div id="lblTitulo"class="data grid_3">
-                                título aquí
-                            </div>
-                            <div class="grid_1">
-                                Nombre del creador:
-                            </div>
-                            <div id="lblNombreUsuario" class="data grid_3">
-                                nombre de usuario aquí
-                            </div>
-                            <div class="grid_1">
-                                Fecha de creación:
-                            </div>
-                            <div id="lblFechaCreacion" class="data grid_3">
-                                fecha de creación aquí
-                            </div>
-                        </div>
-                        <div class="clear"></div>
-                        <div>
-                            <button id="btnVerEstadisticas">
-                                Ver estadísticas
-                            </button>
-                        </div>
-                        <div class="clear"></div>
-                        <div id="btnsRefPar">
-                            <button id="btnConfigurar">
-                                Configurar...
-                            </button>
-                            <button id="btnParticipar">
-                                Participar
-                            </button>
-                        </div>
-                        <div class="clear"></div>
-                    </div>
+                    </div><!-- .row -->
+                    
                     <div class="clear"></div>
-                    <table id="dgReglas">
+                    
+                    <table id="dgReglas" class="table table-bordered table-stripped">
                         <thead>
                             <tr>
-                                <th>Reglas</th>
+                                <th>Reglas Asociadas</th>
                             </tr>
                         </thead>
                         <tbody>
-
+                            <tr>
+                                <th>No se han encontrado reglas asociadas al diálogo</th>
+                            </tr>
                         </tbody>
                     </table>
+                    
                     <div class="clear"></div>
-                    <div style="margin-top: 15px;">
-                        Acta dialogal
-                    </div>
+                    
+                    <h3>Acta dialogal</h3>
                     <div id="txtArea">
                         <textarea id="txtActaUsuario" rows="8" cols="110"></textarea>
                     </div>
+                    
                     <div class="clear"></div>
-                    <div>
-                        <button id="btnGuardarActa" class="grid_1">
-                            Guardar acta
-                        </button>
-                        <button id="btnVerTodasActas" class="grid_2">
-                            Ver todas las actas
-                        </button>
+                    
+                    <div class="container">
+                        <button class="btn" id="btnGuardarActa">Guardar acta</button>
+                        <button class="btn" id="btnVerTodasActas">Ver todas las actas</button>
                     </div>
+                    
                     <div class="clear"></div>
-                </div>
+                    
+                    <div id="listado_actas">
+                        <div>
+                            <h6>Por favor seleccione un usuario</h6>
+                            <div class="clear"></div>
+                            <div>
+                                <select id="cmbUsuarios">
+                                    <option>Usuario 1</option>
+                                    <option>Usuario 2</option>
+                                </select>
+                            </div>
+                            <div class="clear"></div>
+                            <div id="lblActa">
+                                <h6>Acta asociada</h6>
+                            </div>
+                            <div id="cntndrActaOtroUsuario">
+                                <div id="txtActaOtroUsuario" class="ui-corner-all"></div>
+                                <!-- <textarea id="txtActaOtroUsuario" rows="8" cols="110"></textarea> -->
+                            </div>
+                            <div class="clear" style="height: 20px;"></div>
+                        </div>
+                    </div><!-- #listado_actas -->
+                </div><!-- #tab1 -->
 
-                <div id="tab2">
+                <div id="tab2" class="tab-pane active">
                     <div id="btnRefrescarContainer">
                         <button id="btnRefrescar">Refrescar</button>
                     </div>
                     <div class="clear" style="heigth:10px;"></div>
-                    
                     <div id="browserNav">
                         <div class="ui-widget" style="font-size:12px;"><b>Navegador del diálogo:</b></div>
                         <div id="controlHilo">
                             <?php
-                            include('./Controls/DialogBrowser.php');
+                                include('./Controls/DialogBrowser.php');
                             ?>
-
                         </div>
 
                         <div class="clear" style="height:20px;"></div>
                         <div class="ui-widget" style="font-size:12px;"><b>Árbol de intervenciones:</b></div>
                         <div id="Navegador" class="ui-corner-all">
                             <?php
-                            //include('./Controls/controlDisplayTextoIntervencion.php');
-                            include('./Controls/NavegadorHilo.php');
+                                //include('./Controls/controlDisplayTextoIntervencion.php');
+                                include('./Controls/NavegadorHilo.php');
                             ?>
                         </div>
                     </div>
-                    <div class="clear" style="height: 20px;"></div>
-                    
+
                     <div id="controlTab">
                         <ul>
-<!--                            <li>
-                                <a href="#tab2-1">Responder</a>
-                            </li>-->
                         </ul>
-
-<!--                        <div id="tab2-1">
-                            <div id="controlEscritura">
-                                <?php
-                                //include('Controls/controlEscrituraIntervencion.php');
-                                ?>
-                            </div>
-                            <div class="clear"></div>
-                        </div>-->
                     </div>
-                </div>
+                </div><!-- #tab2 -->
 
-                <div id="tab3">
-                    <div>
-                        <div>
-                            <a>Usuario</a>
-                        </div>
-                        <div class="clear"></div>
-                        <div>
-                            <select id="cmbUsuarios">
-                                <option>Usuario 1</option>
-                                <option>Usuario 2</option>
-                            </select>
-                        </div>
-                        <div class="clear"></div>
-                        <div id="lblActa">
-                            <a>Acta</a>
-                        </div>
-                        <div id="cntndrActaOtroUsuario">
-                            <div id="txtActaOtroUsuario" class="ui-corner-all"></div>
-<!--                            <textarea id="txtActaOtroUsuario" rows="8" cols="110"></textarea>-->
-                        </div>
-                        <div class="clear" style="height: 20px;"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
+            </div><!-- .tab-content -->
+        </div><!-- .tabbable -->
+    </div><!-- .row -->
+    
     <a name="final"></a>
     
-        <!--Carga pantalla de advertencia cuando javascript no está habilitado-->
-        <noscript>
-            <meta http-equiv="Refresh" content="0; URL=../ClienteDialogo/Errores/JavascriptError.html" >
-        </noscript>
-        
-        <!--        <div id="notas">
-        <?php
-//            include("VentanaNotas.html");
-        ?>
-                </div>-->
-    </body>
+    <div class="row">
+        <div id="footer" class="span12">
+            <div class="row">
+            <div class="span10">
+            <h5>Universidad de Santiago de Chile <br>
+            Departamento de Ingeniería Informática</h5>
+            <p>Aplicación Web resultado de la Memoria de Título de Cristian Chávez R.<br>
+            Usabilidad mejorada por parte de los alumnos de la Asignatura Interacción Humano Computador,<br>
+            Segundo Semestre de 2012</p>
+            </div>
+            <div id="usach-footer" class="span2">
+            <a href="http://www.usach.cl/"><img src="../estilos/img/html/usach-white.png" alt="" /></a>
+            </div>
+            </div>
+        </div>
+    </div>
+
+</div><!-- #page -->
+
+<div id="agradecimientos">
+<div class="container">
+<div class="row">
+<div class="span12">
+<p>
+En el desarrollo de esta aplicación se utilizaron herramientas y bibliotecas licenciadas 
+bajo código abierto.
+</p>
+
+<a href="http://jquery.com/" target="_blank">jQuery</a>
+<a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>
+<a href="http://valums.com/ajax-upload/" target="_blank">Valums file uploader</a>
+<a href="http://javascriptsoapclient.codeplex.com/" target="_blank">Javascript SOAP Client 2.4</a>
+<a href="http://onehackoranother.com/projects/jquery/tipsy/" target="_blank">Tipsy</a>
+<a href="https://github.com/akzhan/jwysiwyg/" target="_blank">Jwysiwyg</a>
+<a href="http://medialize.github.com/jQuery-contextMenu/" target="_blank">JQuery context menu</a>
+<a href="http://mbraak.github.com/jqTree/" target="_blank">JqTree</a>
+<a href="http://www.appelsiini.net/projects/jeditable" target="_blank">JEditable</a>
+<a href="http://datatables.net/" target="_blank">JQuery Data Tables</a>
+<a href="http://sourceforge.net/projects/nusoap/" target="_blank">NuSOAP</a>
+<a href="http://www.php.net/" target="_blank">PHP</a>
+</div>
+</div>
+</div>
+</div>
+    
+<!-- javascript -->
+<script type="text/javascript" src="../estilos/js/bootstrap.js"></script>
+<script type="text/javascript" src="../estilos/js/less-1.3.0.min.js"></script>
+<!-- /javascript -->
+<script type="text/javascript">
+    $('#ayuda-index').affix({
+        offset: {
+          top: 240,
+          bottom: 500
+        }
+    })    
+</script>
+
+
+</body>
 </html>

@@ -1,6 +1,11 @@
 $(function() {
-        
+
     $("#moves").hide();
+    $('#anchor1').on('click', function() {
+        $('#listado_actas').hide();
+    });
+
+    /*
     $("#tabs").tabs({
         selected:1,
         show:function(event, ui){
@@ -9,10 +14,10 @@ $(function() {
             }
         }
     });
-    
+    */
     /*oculta pestaña ver todas las actas*/
-    $("#tab3").hide();
-    $("#todasActas").hide();
+    //$("#tab3").hide();
+    //$("#todasActas").hide();
     /**/
     
     $("#btnVerEstadisticas").button({
@@ -316,9 +321,10 @@ VentanaDialogo.prototype.btnGuardarActa_Click=function(sender){
 }
 
 VentanaDialogo.prototype.btnParticipar_Click=function(sender){
-    $("#tabs").tabs({
+    /*$("#tabs").tabs({
         selected:1
     });
+    */
 }
 
 VentanaDialogo.prototype.cmbUsuarios_SelectionChanged=function(sender,event){
@@ -342,13 +348,15 @@ VentanaDialogo.prototype.cmbUsuarios_SelectionChanged=function(sender,event){
 
 VentanaDialogo.prototype.btnVerTodasActas_Click=function(sender){
     //colocar como visible la pestaña ver todas actas.
-    $("#tab3").show();
-    $("#todasActas").show();
+    $("#listado_actas").show();
+    //$("#todasActas").show();
     //pestaña como activa.
     $("#txtActaOtroUsuario").html("");
-    $("#tabs").tabs({
+    
+    /*$("#tabs").tabs({
         selected:2
     });
+    */
     //Actas[]
     me.actas = Controlador.obtenerTodasLasActas();
     //vaciar el combobox
@@ -376,7 +384,7 @@ VentanaDialogo.prototype.btnRefrescar_Click=function(sender){
 }
 
 VentanaDialogo.prototype.crearTablaReglas=function(){
-    $("#dgReglas").dataTable({
+    /*$("#dgReglas").dataTable({
         "bJQueryUI" : true,
         "bPaginate" : false,
         "bScrollInfinite" : true,
@@ -397,7 +405,7 @@ VentanaDialogo.prototype.crearTablaReglas=function(){
             "sWidth":"100%"
         }
         ]
-    });
+    });*/
 }
 /** 
  * Carga los datos del diálogo indicado en el sistema.
@@ -416,16 +424,16 @@ VentanaDialogo.prototype.cargarDialogo = function(dialogo) {
         
         //propiedades de tabs.
         //-borrar el contenido de la tabla reglas.
-        $("#dgReglas").dataTable().fnDestroy();
-        $("#dgReglas tbody").empty();
+        //$("#dgReglas").dataTable().fnDestroy();
+        if (dialogo.Reglas.length > 0) $("#dgReglas tbody").empty();
         me.crearTablaReglas();
         //-asignar las reglas a la tabla reglas.
-        for(var i =0;i<dialogo.Reglas.length;i++){
-            $("#dgReglas").dataTable().fnAddData([
-                dialogo.Reglas[i].textoRegla]);
+        for(var i = 0;i<dialogo.Reglas.length;i++){
+            $("#dgReglas tbody").append('<tr><td>' + dialogo.Reglas[i].textoRegla + '</td></tr>');
         }
 
     } catch(ex) {
+        //alert('Error ventanadialogoJS')
     }
 
     try {
