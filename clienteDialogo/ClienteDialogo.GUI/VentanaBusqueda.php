@@ -47,7 +47,7 @@
         <div class="row">
             <div class="span12">
                 <div id="aBuscar">
-                    <label for="txtNombreUsuario">Ingrese el nombre de usuario a buscar: </label>
+                    <label for="txtNombreUsuario">Ingrese el nombre de usuario a buscar (puede no ser exacto): </label>
                     <input type="text" id="txtNombreUsuario" />
                     <input type="button" id="btnBuscar" class="btn" value="Buscar" />
                 </div>

@@ -28,7 +28,7 @@ class IntervencionDAC {
                 $_query->addCampo("x_texto_intervencion");
                 $_query->addCampo("d_fecha_creacion");
                 $_query->addCampo("x_texto_respuesta");
-                $_query->addCondicionAND("x_id_usuario='" . $usuario . "'");
+                $_query->addCondicionAND("lower(x_id_usuario) similar to '%" . $usuario . "%'");
 
                 $_dt = $conexion->consultar($_query->QuerySelect());
                 $conexion->cerrarConexion();
