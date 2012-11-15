@@ -213,6 +213,7 @@ $user_gravatar = 'http://www.gravatar.com/avatar/' . md5($user_email) . '/?s=90'
                                 <div id="lblFechaCreacion" class="data grid_3">fecha de creación aquí</div>
                             </div>
                             <div class="clear"></div>
+                            
                             <div>
                                 <button class="button" id="btnVerEstadisticas">Ver estadísticas</button>
                             </div>
