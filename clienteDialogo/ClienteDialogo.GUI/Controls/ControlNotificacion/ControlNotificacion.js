@@ -6,8 +6,6 @@ $(function(){
 function notificar(mensaje){
     
     $("#notificar #mensaje").html(mensaje);
-    
 //    $("#background").show("puff").delay(1500).hide("puff");
-    $('#notificar').modal('show');
-    //$("#notificar").fadeIn().delay(1500).fadeOut();
+    $("#notificar").fadeIn().delay(1500).fadeOut();
 }
