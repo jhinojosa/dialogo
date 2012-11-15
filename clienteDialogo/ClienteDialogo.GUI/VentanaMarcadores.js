@@ -97,7 +97,8 @@ VentanaMarcadores.prototype.crearTablaMarcadores=function(){
             bVisible: false
         },{
             sTitle: "",
-            bSortable: false
+            bSortable: false,
+            bVisible: false
         },{
             sTitle: "",
             bSortable:false
