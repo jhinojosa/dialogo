@@ -4,7 +4,7 @@
     <h3 id="myModalLabel">Notificación</h3>
   </div>
   <div class="modal-body">
-    <p id="mensaje">One fine body…</p>
+    <p id="mensaje">Si ves esto es porque aún no has implementado boostrap!</p>
   </div>
   <div class="modal-footer">
     <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
