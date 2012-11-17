@@ -56,6 +56,13 @@ class BCRegla {
             array_push($dialogo->Reglas, $r);
         }
     }
+    
+    public function eliminarReglaDialogo($idRegla) {
+        $_reglaDAC = new ReglaDAC();
+        $_ret = $_reglaDAC->eliminarReglaDialogo($idRegla);
+
+        return $_ret;
+    }
 
 }
 

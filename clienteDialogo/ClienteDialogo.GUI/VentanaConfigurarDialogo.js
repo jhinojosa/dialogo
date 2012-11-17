@@ -4,6 +4,7 @@ $(function() {
     $("#btnAgregarTodasPredefinida").button();
     $("#btnCambiarFacilitador").button();
     $("#btnAgregarUsuario").button();
+     $("#btnEliminarRegla").button();
 
 
     
@@ -655,7 +656,7 @@ VentanaConfigurarDialogo.prototype.crearTablaReglas=function(){
             "sTitle":"orden",
             "bVisible":false
         },{
-            "sWidth":"100%",
+            "sWidth":"900px",
             "sTitle":"Regla"
         }]
     });

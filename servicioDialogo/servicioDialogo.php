@@ -292,6 +292,17 @@ $server->register("ServicioDialogo.eliminarDialogo", // method name
         "http://schemas.xmlsoap.org/soap/encoding/" //encoding scheme.
 );
 
+$server->register("ServicioDialogo.eliminarRegla", // method name
+        array("idregla" => "xsd:int"), // input parameters
+        array("return" => "xsd:bool"), // output parameters
+        $namespace, // namespace
+        false, //"urn:servicioDialogo#listarAlertas", // soapaction
+        "rpc", // style. rpc or document
+        "encoded", // use. encoded or literal.
+        "", // documentation
+        "http://schemas.xmlsoap.org/soap/encoding/" //encoding scheme.
+);
+
 $server->register("ServicioDialogo.listarMarcadores", // method name
         array("sesion" => "xsd:string"), // input parameters
         array("return" => "xsd:Array"), // output parameters
@@ -545,6 +556,20 @@ class ServicioDialogo{
         $_controlador = new BCAdministracion();
         $_retorno = $_controlador->guardarReglas($sesion, $rules);
         return $_retorno;
+    }
+    
+    function eliminarRegla($idRegla){
+        $idRegla = json_decode($idRegla);
+        try {
+            $_regla = new BCRegla();
+            $_retorno = $_regla->eliminarRegla($idRegla);
+
+            return json_encode($_retorno);
+        } catch (Exception $e) {
+            $_mensajeError = "Ocurrió un error inesperado. Inténtelo otra vez.";
+        }
+
+        return json_encode("Volví con error =(");
     }
 
     //NOTA: Sólo se guardan las reglas.

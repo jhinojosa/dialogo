@@ -1,4 +1,6 @@
 <?php
+
+ini_set('display_errors','OFF');
 session_start();
 
 // Está la asesion iniciada? o nos están intentando embaucar??
@@ -6,6 +8,7 @@ if( !isset($_SESSION['user_email']) ) {
     
     // Se realiza una redireccion
     header('Location: ../../') ;
+    
 }
 
 $user_username = $_SESSION['user_username'];
@@ -54,6 +57,7 @@ $user_gravatar = 'http://www.gravatar.com/avatar/' . md5($user_email) . '/?s=90'
 <script src="Controls/DatosUsuario.js" type="text/javascript"></script>
 <script src="Controls/ControlNotificacion/ControlNotificacion.js" type="text/javascript"></script>
 
+
 <!--
 Problema: scripts necesarios para nuevo dialogo, pero interfieren en la ventana de dialogos disponibles
 -->
@@ -70,10 +74,12 @@ Problema: scripts necesarios para nuevo dialogo, pero interfieren en la ventana 
 <script src="datatypes/Movida.js" type="text/javascript"></script>
 <script src="datatypes/Balance.js" type="text/javascript"></script>
 <script src="datatypes/Regla.js" type="text/javascript"></script>
+<script src="datatypes/CategoriaMovida.js" type="text/javascript"></script>
 <script src="Controladores/CSesion.js" type="text/javascript"></script>
 <script src="Controladores/CDialogo.js" type="text/javascript"></script>
 <script src="Controladores/ConexionManager.js" type="text/javascript"></script>
 <script src="Controladores/CValidacionUsuario.js" type="text/javascript"></script>
+
 
 <script src="../Javascript/jQuery/DataTables-1.9.1/media/js/jquery.dataTables.js"></script>
 <!-- modernizr -->
