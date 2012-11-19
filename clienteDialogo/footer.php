@@ -47,14 +47,7 @@
 <script type="text/javascript" src="../estilos/js/bootstrap.js"></script>
 <script type="text/javascript" src="../estilos/js/less-1.3.0.min.js"></script>
 <!-- /javascript -->
-<script type="text/javascript">
-    $('#ayuda-index').affix({
-        offset: {
-          top: 240,
-          bottom: 500
-        }
-    })    
-</script>
+
 
 
 </body>

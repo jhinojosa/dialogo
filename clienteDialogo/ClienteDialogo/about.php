@@ -135,11 +135,11 @@ if (isset($_REQUEST['logout'])) {
             <div class="navbar">
                 <div class="navbar-inner">
                     <ul class="nav">
-                        <li class="active"><a rel="tooltip" title="first tooltip" href="#"><i class="icon-home"></i> Portada</a></li>
+                        <li><a rel="tooltip" title="first tooltip" href="#"><i class="icon-home"></i> Portada</a></li>
                     </ul>
                     <ul class="nav pull-right">
                         <li><a href="#"><i class="icon-question-sign"></i> Ayuda</a></li>
-                        <li><a href="#"><i class="icon-info-sign"></i> Acerca de</a></li>
+                        <li class="active"><a href="#"><i class="icon-info-sign"></i> Acerca de</a></li>
                     </ul>
                  </div>
             </div>    
@@ -150,35 +150,18 @@ if (isset($_REQUEST['logout'])) {
     <div id="barra-estado" class="row">
         <div class="span12">
             <ul class="breadcrumb">
-                <li class="active"><i class="icon-home"></i> Portada</li>
+                <li class="active"><i class="icon-home"></i> Acerca de</li>
             </ul>
         </div> 
     </div> <!-- #barra-estado -->       
 
     <div class="row" id="content">
 
-        <div id="1st-col-home" class="span6">
-            <div class="hero-unit">
-                
-                <h3>¿Qué es...</h3>
-                <h1>Diálogo Remoto?</h1>
-                <p><br>Diálogo Remoto es una aplicación de código abierto desarrollada como producto de un proyecto de migración, en el contexto del trabajo de titulación del alumno Cristian Alberto Chávez Ramos, para la carrera de Ingeniería de Ejecución en Computación e Informática de la Universidad de Santiago de Chile.</p>
-                <p>
-                    <a class="btn btn-info btn-large" href="about.html" target="_blank"> Saber más</a>
-                </p>
-                <br />
-                <p>Para utilizar todas las funciones de esta aplicación, debes utilizar uno de los siguiente navegadores de internet:</p>
-                <p>
-                    <a href="https://www.google.com/intl/es/chrome/browser/?hl=es"><img title="Chrome"  src="../estilos/img/html/gc_64.png"></a>
-                    <a href="http://www.mozilla.org/es-ES/firefox/new/"><img title="Firefox" src="../estilos/img/html/ff_64.png"></a>
-                    <a href="http://www.opera.com/"><img title="Opera" src="../estilos/img/html/o_64.png"></a>
-                    <a href="http://www.apple.com/es/safari/"><img title="Safari" src="../estilos/img/html/s_64.png"></a>
-                </p>
-            </div>
-        </div>
-
-        <div id="2nd-col-home" class="span6" >
-            <?php require_once 'VentanaRegistro.php';?>
+        <div class="span12">
+            <h3>Acerca de</h3>
+            <p>Sistema para el diálogo remoto es una aplicación de código abierto desarrollada como producto de un proyecto de migración, en el contexto del trabajo de titulación del alumno Cristian Alberto Chávez Ramos, para la carrera de Ingeniería de Ejecución en Computación e Informática de la Universidad de Santiago de Chile.</p>
+            <p>La aplicación que da origen a ésta es producto del proyecto de titulación del alumno Juan Pablo González Tognarelli, para la carrera de Ingeniería Civil Informática de la Universidad de Santiago de Chile.</p>
+            <p>Cabe destacar la participación de Héctor Antillanca Espina, Doctor en Ciencias de la Ingeniería, como profesor guía de ambos proyectos y de Gerardo Cerda Neumann, Magister en Ingeniería Informática, como revisor de éste.</p>
         </div>
 
     </div><!-- #content -->
