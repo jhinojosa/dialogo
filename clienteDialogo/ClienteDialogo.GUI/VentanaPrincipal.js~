@@ -145,6 +145,7 @@ VentanaPrincipal.prototype.InitializeComponents=function(){
     $("#btnAcercaDe").click(function(){
         my.btnAcercaDe_Click(this);
 
+	window.location.href ="VentanaAcercaDe.php?idsesion=" + JSON.stringify(window.my.sesionActual.idSesion) + "&usuario=" + JSON.stringify(me.usuario.nombreUsuario);
     });
     
 }
