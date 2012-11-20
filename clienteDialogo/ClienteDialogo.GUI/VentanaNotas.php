@@ -34,6 +34,15 @@
         
         <script src="Controls/ControlNotificacion/ControlNotificacion.js" type="text/javascript"></script>
         <link rel="stylesheet" href="Controls/ControlNotificacion/ControlNotificacion.css" type="text/css">
+        <!-- css -->
+        <link rel="stylesheet/less" type="text/css" href="../estilos/style.less">
+        <link rel="stylesheet" href="../estilos/css/bootstrap.css" type="text/css" media="screen" />
+
+        <!-- /css-->
+        <!-- javascript -->
+<script type="text/javascript" src="../estilos/js/bootstrap.js"></script>
+<script type="text/javascript" src="../estilos/js/less-1.3.0.min.js"></script>
+<!-- /javascript -->
     </head>
     <body onload="document.getElementById('cargando').style.display='none';">
 

@@ -2,7 +2,7 @@ div.controlDisplayIntervencionContainer {
     background-color: #dddddd;
     height: 100%;
     border: #005190 solid 1px;
-    z-index: 999999;
+    z-index: 200;
     cursor: default;
 }
 
