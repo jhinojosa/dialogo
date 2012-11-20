@@ -8,3 +8,10 @@
 Icon?
 ehthumbs.db
 Thumbs.db
+clienteDialogo/ClienteDialogo.Admin/Controladores/ConexionManager.js
+
+clienteDialogo/ClienteDialogo.GUI/Controladores/ConexionManager.js
+
+clienteDialogo/ClienteDialogo/Controladores/ConexionManager.js
+
+servicioDialogo/servicio.config.php

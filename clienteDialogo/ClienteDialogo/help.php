@@ -62,7 +62,7 @@ if (isset($_REQUEST['logout'])) {
 <script src="VentanaRegistro.js" type="text/javascript"></script>
 </head>
 
-<body data-spy="scroll" data-target="#ayuda-index" data-offset="100">
+<body data-spy="scroll" data-target="#ayuda-index">
     <div id = "warning">
         
         <!--[if IE 6]>
@@ -358,7 +358,7 @@ if (isset($_REQUEST['logout'])) {
         $('.bs-docs-sidenav').affix({
             offset: {
               top: 240,
-              bottom: 300
+              bottom: 400
             }
         });
         $('.help-section').tooltip({
