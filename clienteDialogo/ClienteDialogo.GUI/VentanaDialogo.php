@@ -150,14 +150,14 @@ $user_gravatar = 'http://www.gravatar.com/avatar/' . md5($user_email) . '/?s=90'
         Elemento de ayuda para los tipos de movida.
         -->
         <div id="moves" style="width: 450px; text-align: center; position: fixed; z-index: 9999998">
-            <img src="Images/dialogo.jpg">
+            <!--<img src="Images/dialogo.jpg">
             <p style="text-align: justify;">
                 De esta figura se desprende que en el diálogo cada participante busca darse a 
                 entender (mediante el mover y el oponer) y entender (mediante el observar y el 
                 seguir). Si estas movidas son hechas en el ambiente de respeto que se ha 
                 descrito y el facilitador logra mantener las opiniones dentro de la línea del 
                 tema el aprendizaje es casi inevitable.
-            </p>
+            </p>-->
         </div>
         
 <div id="page" class="container wide">

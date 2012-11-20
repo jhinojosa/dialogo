@@ -3,7 +3,12 @@ table#grillaDialogBrowser, table#grillaDialogBrowser th, table#grillaDialogBrows
 }
 
 div#dialogBrowser {
-    background-image: url('../Images/artz.png');
+    /*background-image: url('../Images/artz.png');*/
+    -webkit-box-shadow: inset 0px 0px 18px 0px rgba(0,0,0,.15);
+    -moz-box-shadow: inset 0px 0px 18px 0px rgba(0,0,0,.15);
+    -ms-box-shadow: inset 0px 0px 18px 0px rgba(0,0,0,.15);
+    -o-box-shadow: inset 0px 0px 18px 0px rgba(0,0,0,.15);
+    box-shadow: inset 0px 0px 18px 0px rgba(0,0,0,.15);
     overflow: auto;
     width: 938px;
     height: 300px;

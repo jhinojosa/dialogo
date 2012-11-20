@@ -361,6 +361,19 @@ class IntervencionDAC {
 
                         $_husuarios[$x_id_usuario] = null;
                         $_autor = $_husuarios[$x_id_usuario];
+                        
+                        
+                        $_exito = $conexion->abrirConexion();
+                        $_query_ = new Query($conexion, "usuario");
+                        $_query_->addCampo("x_email_usuario");
+                        $_query_->addCondicionAND("x_id_usuario='" . $x_id_usuario."'");
+                        $_dt_ = $conexion->consultar($_query_->QuerySelect());
+                        $conexion->cerrarConexion();
+                        foreach ($_dt_ as $dr) {
+                            $mail = $dr["x_email_usuario"];
+                            $_autor->email = $mail;
+                            $_autor->nombreUsuario = $x_id_usuario;
+                        }
 
                         if ($_autor == null) {
                             $_autor = new Usuario();
