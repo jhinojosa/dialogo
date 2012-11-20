@@ -416,6 +416,7 @@ VentanaDialogo.prototype.cargarDialogo = function(dialogo) {
     
     try {
         document.title ="Dialogando - " + dialogo.Titulo;
+        $('#barra-estado li:last').html(dialogo.Titulo);
         $("#tituloPaginaActual a").text("Dialogando - " + dialogo.Titulo);
         
         $("#lblTitulo").text(dialogo.Titulo);

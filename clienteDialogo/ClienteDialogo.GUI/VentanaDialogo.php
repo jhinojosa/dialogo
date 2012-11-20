@@ -187,7 +187,36 @@ $user_gravatar = 'http://www.gravatar.com/avatar/' . md5($user_email) . '/?s=90'
             <div class="clearfix"></div>
         </div><!-- #user-panel -->                          
     </div><!-- #header -->
-
+    
+    <div id="menu-bar" class="row">
+        <div class="span12">
+            <div class="navbar">
+                <div class="navbar-inner">
+                    <ul class="nav">
+                        <li ><a href="#"><i class="icon-home"></i> Portada</a></li>
+                        <li class="active"><a href="#"><i class="icon-comment"></i> Diálogos</a></li>
+                        <li ><a href="#" id="btnVerMarcadores"><i class="icon-star"></i> Marcadores</a></li>
+                        <li ><a href="#" id="btnBuscarIntervenciones"><i class="icon-eye-open"></i> Intervenciones</a></li>
+                    </ul>
+                    <ul class="nav pull-right">
+                        <li><a href="#"><i class="icon-question-sign"></i> Ayuda</a></li>
+                        <li><a href="#"><i class="icon-info-sign"></i> Acerca de</a></li>
+                    </ul>
+                </div>
+            </div>    
+        </div>  
+    </div><!-- #menu-bar -->
+        
+    <div id="barra-estado" class="row">
+      <div class="span12">
+        <ul class="breadcrumb">
+          <li><a href="#"><i class="icon-home"></i> Portada</a> <span class="divider">/</span></li>
+          <li><a href="#">Diálogos</a> <span class="divider">/</span></li>
+          <li class="active">Diálogos</li>
+        </ul>
+      </div> <!-- #barra-estado -->
+    </div>
+        
     <div class="row">
         <div  class="tabbable span12">
             <ul class="nav nav-tabs">
@@ -344,6 +373,7 @@ bajo código abierto.
 </p>
 
 <a href="http://jquery.com/" target="_blank">jQuery</a>
+
 <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>
 <a href="http://valums.com/ajax-upload/" target="_blank">Valums file uploader</a>
 <a href="http://javascriptsoapclient.codeplex.com/" target="_blank">Javascript SOAP Client 2.4</a>
