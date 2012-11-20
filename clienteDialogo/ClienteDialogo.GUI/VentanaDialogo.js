@@ -482,7 +482,14 @@ VentanaDialogo.prototype.cargarDialogo = function(dialogo) {
         //ya que viene en el objeto usuario
         var _csesion = new CSesion();
         dialogo.usuarioCreador.imagen = _csesion.obtenerArchivoUsuario("", dialogo.usuarioCreador.nombreUsuario);
-        $("#imagenUsuario img").prop("src", dialogo.usuarioCreador.imagen);
+        //alert(dialogo.usuarioCreador.email);
+        
+        var g;
+        if (_usu.email) g = "http://www.gravatar.com/avatar/" + calcMD5(_usu.email) + "/?s=50";
+        else g = "http://www.gravatar.com/avatar/" + calcMD5('bb@asdasdasjkl.asd') + "/?s=50";
+        
+        $("#imagenUsuario img").prop("src", g);
+        
     } catch(ex) {
     }
     
