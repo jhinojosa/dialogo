@@ -1,5 +1,6 @@
 $(function() {
     
+    $("#btnEditarPerfil").button();	
     /*$("#btnNuevoDialogo").button({
         icons : {
             primary : 'ui-icon-plusthick'
@@ -144,8 +145,11 @@ VentanaPrincipal.prototype.InitializeComponents=function(){
     });
     $("#btnAcercaDe").click(function(){
         my.btnAcercaDe_Click(this);
+    });
+    $("#btnEditarPerfil").show();
 
-	window.location.href ="VentanaAcercaDe.php?idsesion=" + JSON.stringify(window.my.sesionActual.idSesion) + "&usuario=" + JSON.stringify(me.usuario.nombreUsuario);
+    $("#btnEditarPerfil").click(function(){
+    window.location.href ="EditarPerfil.php?idsesion=" + JSON.stringify(window.my.sesionActual.idSesion) + "&usuario=" + JSON.stringify(me.usuario.nombreUsuario);
     });
     
 }
@@ -280,4 +284,9 @@ function seleccionarDialogo_Executed(){
             
             
     }
+}
+
+VentanaPrincipal.prototype.btnEditarPerfil_Click=function(){
+    
+    window.open("/xxEditarPerfil.php?idsesion=" + JSON.stringify(window.my.sesionActual.idSesion) + "&usuario=" + JSON.stringify(me.usuario.nombreUsuario));
 }

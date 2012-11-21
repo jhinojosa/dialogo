@@ -1,5 +1,6 @@
 $(function() {
     
+    $("#btnEditarPerfil").button();	
     /*$("#btnNuevoDialogo").button({
         icons : {
             primary : 'ui-icon-plusthick'
@@ -144,7 +145,11 @@ VentanaPrincipal.prototype.InitializeComponents=function(){
     });
     $("#btnAcercaDe").click(function(){
         my.btnAcercaDe_Click(this);
+    });
+    $("#btnEditarPerfil").show();
 
+    $("#btnEditarPerfil").click(function(){
+    window.location.href ="EditarPerfil.php?idsesion=" + JSON.stringify(window.my.sesionActual.idSesion) + "&usuario=" + JSON.stringify(me.usuario.nombreUsuario);
     });
     
 }
@@ -185,6 +190,10 @@ VentanaPrincipal.prototype.btnRefresh_Click = function(sender){
     my.actualizarListaDialogos(my.sesionActual);
 }
 
+VentanaPrincipal.prototype.btnEditarPerfil_Click=function(){
+    
+    window.open("/xxEditarPerfil.php?idsesion=" + JSON.stringify(window.my.sesionActual.idSesion) + "&usuario=" + JSON.stringify(me.usuario.nombreUsuario));
+}
 
 VentanaPrincipal.prototype.actualizarListaDialogos = function(sesionActual) {
     //alert("actualizarListaDialogos");
@@ -280,3 +289,5 @@ function seleccionarDialogo_Executed(){
             
     }
 }
+
+
