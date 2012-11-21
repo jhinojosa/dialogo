@@ -190,10 +190,6 @@ VentanaPrincipal.prototype.btnRefresh_Click = function(sender){
     my.actualizarListaDialogos(my.sesionActual);
 }
 
-VentanaPrincipal.prototype.btnEditarPerfil_Click=function(){
-    
-    window.open("/xxEditarPerfil.php?idsesion=" + JSON.stringify(window.my.sesionActual.idSesion) + "&usuario=" + JSON.stringify(me.usuario.nombreUsuario));
-}
 
 VentanaPrincipal.prototype.actualizarListaDialogos = function(sesionActual) {
     //alert("actualizarListaDialogos");
@@ -290,4 +286,7 @@ function seleccionarDialogo_Executed(){
     }
 }
 
-
+VentanaPrincipal.prototype.btnEditarPerfil_Click=function(){
+    
+    window.open("/xxEditarPerfil.php?idsesion=" + JSON.stringify(window.my.sesionActual.idSesion) + "&usuario=" + JSON.stringify(me.usuario.nombreUsuario));
+}
