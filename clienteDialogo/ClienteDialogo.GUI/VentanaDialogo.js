@@ -1,5 +1,6 @@
 $(function() {
     
+    
     // minimizar arbolito
     $('#navegador-anchor').click(function() {
         $('#controlHilo').slideToggle();
