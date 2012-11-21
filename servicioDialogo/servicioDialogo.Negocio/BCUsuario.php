@@ -175,7 +175,7 @@ class BCUsuario {
 //                        echo $user->email;
                 mail($usuario->email, $subject, $cuerpo, $headers);
             } else {
-                $_ret[1] = $mensajeError = "El usuario ya existe";
+                $_ret[1] = $mensajeError = "El usuario o correo ya existe ya existe";
                 $_ret[0] = false;
             }
 
