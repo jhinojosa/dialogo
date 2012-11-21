@@ -315,7 +315,8 @@ $user_gravatar = 'http://www.gravatar.com/avatar/' . md5($user_email) . '/?s=90'
                     </div>
                     <div class="clear" style="heigth:10px;"></div>
                     <div id="browserNav">
-                        <div class="ui-widget" style="font-size:12px;"><b>Navegador del diálogo:</b></div>
+                        <div class="row-fluid"><div class="span12"><h4><a href="javascript:void(0);" id="navegador-anchor">Navegador del diálogo &darr;</a></h4></div></div>
+                        <div class="clearfix"></div>
                         <div id="controlHilo">
                             <?php
                                 include('./Controls/DialogBrowser.php');

@@ -1,5 +1,15 @@
 $(function() {
-
+    
+    // minimizar arbolito
+    $('#navegador-anchor').click(function() {
+        $('#controlHilo').slideToggle();
+        if ($(this).hasClass('c')) {
+            $(this).removeClass('c').html('Navegador del diálogo &darr;');
+        } else {
+            $(this).addClass('c').html('Navegador del diálogo &rarr;');
+        }
+    });
+    
     $("#moves").hide();
     $('#anchor1').on('click', function() {
         $('#listado_actas').hide();
