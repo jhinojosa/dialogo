@@ -43,7 +43,7 @@ function DatosUsuario(){
     try{
         this.resetUploader();
     }catch(ex){
-        alert(ex);
+        //alert(ex);
     }
     this.usuario;
     this.InitializeComponents();
